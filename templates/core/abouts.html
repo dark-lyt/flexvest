@@ -1,0 +1,453 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://aimarketingholdings.net/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>aimarketingholdings Cryptocurrency</title>
+
+    <meta name="description"
+        content="aimarketingholdings cryptocurrency platform. Best platform for cryptocurrency investment">
+    <meta name="keywords" content="cryptocurrency, aimarketingholdings, bitcoin, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="https://aimarketingholdings.net/img/favicon.ico" rel="shortcut icon">
+
+    <!-- Google Fonts -->
+    <link href="./coin_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static "coin_files/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static 'coin_files/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'coin_files/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'coin_files/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'coin_files/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'coin_files/style.css' %}">
+
+
+    <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder" style="display: none;">
+        <div class="loader" style="display: none;"></div>
+    </div>
+
+    <!-- Header section -->
+    <header class="header-section clearfix">
+       <div class="container-fluid">
+			<a href="coin.html" class="site-logo">
+				<img src="{% static 'coin_files/logo.png' %}" class="myLogo" alt="">
+			</a>
+			<div class="responsive-bar"><i class="fas fa-bars"></i></div>
+			<a href="login.html" class="user"><i class="fas fa-user"></i></a>
+			
+			<nav class="main-menu">
+			{% if request.user.is_authenticated %}
+			
+				<ul class="menu-list">
+					<li><a href="{% url 'core:about' %}">About</a></li>
+					<li><a href="{% url 'core:faq' %}">FaQ</a></li>
+					<li><a href="{% url 'account:logout' %}">Logout</a></li>
+					<a href="{% url 'core:dashboard' %}" class="site-btn">Dashboard</a>
+				</ul>
+				{% else %}
+				<ul class="menu-list">
+					<li><a href="{% url 'core:about' %}">About</a></li>
+					<li><a href="{% url 'core:faq' %}">FaQ</a></li>
+					<li><a href="{% url 'account:login' %}">Login</a></li>
+					<a href="{% url 'account:signup' %}" class="site-btn">Sign Up</a>
+				</ul>
+				{% endif %}
+				
+			</nav>
+		</div>
+    </header>
+    <!-- Header section end -->
+    <style>
+        /** 2.12 Card **/
+        .card {
+            box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+            margin-bottom: 2.2rem;
+        }
+
+        .card.card-statistic {
+            box-shadow: 1px 2px 5px rgba(47, 170, 244, 0.5);
+            background: linear-gradient(to bottom, #25a6f1, #54b9ff);
+            border: none;
+        }
+
+        .card.card-statistic .card-title {
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.8px;
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+
+        .card.card-statistic .card-right p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .card.card-statistic .card-right span.green {
+            color: #6fff6f;
+        }
+
+        .card.card-statistic .card-right span.red {
+            color: #ff7979;
+        }
+
+        .card.card-statistic .chart-wrapper {
+            height: 100px;
+        }
+
+        .card .card-header {
+            border: none;
+        }
+
+        .card .card-header h4 {
+            font-size: 1.2rem;
+        }
+
+        .card .card-header~.card-body {
+            padding-top: 0;
+        }
+
+        .card .card-content {
+            position: relative;
+        }
+
+        .card .card-title {
+            font-size: 1.2rem;
+        }
+
+        .card .card-body {
+            padding: 1.4rem 1.7rem;
+        }
+
+        .card .card-heading {
+            color: #555;
+            font-size: 1.5rem;
+        }
+
+        .card .card-img-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .card .card-img-overlay p {
+            color: #eee;
+        }
+
+        .card .card-img-overlay .card-title {
+            color: #fff;
+        }
+
+        .pricing .card {
+            box-shadow: none;
+            margin-bottom: 0;
+            border-right: 1px solid #e9ecef;
+            box-shadow: 0 10px 10px #e9ecef;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing h1 {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing .card-header .card-title {
+            font-size: 2rem !important;
+            margin-bottom: 0;
+        }
+
+        .pricing .card-header p {
+            font-size: 0.8rem;
+        }
+
+        .pricing ul li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing ul li i,
+        .pricing ul li svg {
+            width: 1rem;
+            color: #39DA8A;
+            font-size: 1rem;
+            margin-right: 7px;
+        }
+
+        .pricing .card-highlighted {
+            background-color: #5A8DEE;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .pricing .card-highlighted .card-header,
+        .pricing .card-highlighted .card-body {
+            background-color: #5A8DEE;
+            color: #fff;
+        }
+
+        .pricing .card-highlighted ul li {
+            color: #fff;
+        }
+
+        .pricing .card-highlighted ul li i,
+        .pricing .card-highlighted ul li svg {
+            color: tint-color(#28a745, 2);
+        }
+
+        .pricing .card-highlighted .card-footer {
+            background-color: #5A8DEE;
+        }
+
+        .pricing .card-highlighted .card-title {
+            color: #fff;
+            font-size: 1.8rem;
+        }
+    </style>
+    <!-- Hero section -->
+    <!-- <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hero-text">
+                    <h2>Invest in <span>Bitcoin</span> <br>Invest with aimarketingholdings</h2>
+                    <h4>We use modern progressive technologies of Bitcoin to earn money</h4>
+                    <form class="hero-subscribe-from">
+                        < <input type="text" placeholder="Enter your email" name="email"> -->
+                        <!-- <input class="site-btn sb-gradients" value="Get Started" name="submit" type="submit"> -->
+                    </form>
+                </div>
+                <!-- <div class="col-md-6">
+                    <img src="./coin_files/laptop.png" class="laptop-image" alt="">
+                </div> -->
+            </div>
+        </div>
+    </section> 
+    <!-- Hero section end -->
+
+
+    <!-- About section -->
+
+
+   
+    <!-- About section end -->
+
+    <!-- <div class="row clearfix row-deck">
+        <div class="col-xl-12 col-lg-4 col-md-6" style="padding: 2%">
+            <iframe src="./coin_files/widget.html" scrolling="auto" marginwidth="0" marginheight="0" border="0"
+                style="border:0;margin:0;padding:0;" width="100%" height="36" frameborder="0"></iframe>
+        </div>
+    </div> -->
+    <!-- Features section -->
+    
+    <!-- Features section end -->
+
+
+    <!-- Process section -->
+    <section class="process-section spad">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>ABOUT AI Market</h2>
+                <p>Start learning about Bitcoin with interactive tutorials. It’s fun, easy, and takes only a few
+                    minutes! </p>
+
+                    <P>
+                        AImarketingholdings is an investment management company. We are run by a team of trading experts who generate profits by buying
+                        and selling currencies, stocks, options and commodities on the foreign exchange market. We employ a variety of trading
+                        techniques to achieve the set goals for the client.
+                    </P>
+                    <br>
+                            <strong>
+                                OUR VISION:
+                            </strong>
+                            <br>
+                    <P>
+              
+                        We are a trading and investment management company aimed at providing clients the best possible services in todays
+                        markets.
+                    </P> 
+                    <br>
+
+                    <strong>
+                        OUR MISSION:
+                    </strong>
+                    
+                    <br>
+                    <p>
+                        As a leading global market maker, AImarketingholdings is committed to creating the most user-friendly trading investment
+                        experience for all our clients while achieving maximum profitability. We strive to bring the most advanced technology
+                        and develop new tools to allow traders to trade with confidence and success. In addition to our tools, we also ensure
+                        that our customer service is of the highest level. Whatever request that you as an investor may make, we will make every
+                        effort to ensure that it will be handled in a timely and professional manner.
+                    </p>
+                    <br>
+                    <strong>
+                        OUR SERVICES:
+                    </strong>
+                    <p>
+                        AImarketingholdings is a leading investment provider to financial market professionals. Our technical strategies cover equity,
+                        forex, commodities and fixed-income markets. Our market depth and knowledge are attributed to our acquired experience on
+                        trading floors of many banking institutions.
+                    </p>
+
+                    
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-4 process">
+                    <div class="process-step">
+                        <figure class="process-icon">
+                            <img src="./coin_files/1.png" alt="#">
+                        </figure>
+                        <h4>Create Your Account</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 process">
+                    <div class="process-step">
+                        <figure class="process-icon">
+                            <img src="./coin_files/2.png" alt="#">
+                        </figure>
+                        <h4>Fund Your Wallet</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 process">
+                    <div class="process-step">
+                        <figure class="process-icon">
+                            <img src="./coin_files/3.png" alt="#">
+                        </figure>
+                        <h4>Withdraw your Funds</h4>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- Process section end -->
+
+
+    <!-- Fact section -->
+    <!-- <section class="fact-section gradient-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>60</h2>
+						<p>Support <br> Countries</p>
+						<i class="ti-basketball"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>12K</h2>
+						<p>Transactions  <br> per hour</p>
+						<i class="ti-panel"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>5B</h2>
+						<p>Largest <br> Transactions</p>
+						<i class="ti-stats-up"></i>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="fact">
+						<h2>12</h2>
+						<p>Years <br> of Experience</p>
+						<i class="ti-user"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+    <!-- Fact section end -->
+
+  
+
+    <!-- Newsletter section -->
+    <!-- <section class="newsletter-section gradient-bg">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-lg-7 newsletter-text">
+					<h2>Subscribe to our Newsletter</h2>
+					<p>Sign up for our weekly industry updates, insider perspectives and in-depth market analysis.</p>
+				</div>
+				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+					<form class="newsletter-form">
+						<input type="text" placeholder="Enter your email">
+						<button>Get Started</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section> -->
+    <!-- Newsletter section end -->
+
+
+
+    <!-- Blog section -->
+  
+    <!-- Blog section end -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row spad">
+                <div class="col-md-6 col-lg-3 footer-widget">
+                    <img src="{% static 'coin_files/logo.png' %}" class="mb-4" alt="">
+                    <!-- <p>\</p> -->
+                    <span>
+                        <!-- Copyright ©<script>document.write(new Date().getFullYear());</script>2021 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://aimarketingholdings.net/" target="_blank">Zhavia Layout</a> -->
+                    </span>
+                </div>
+    
+                <!-- <div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+    					<h5 class="widget-title">Follow Us</h5>
+    					<div class="social">
+    						<a href="https://aimarketingholdings.net/" class="facebook"><i class="fa fa-facebook"></i></a>
+    						<a href="https://aimarketingholdings.net/" class="google"><i class="fa fa-google-plus"></i></a>
+    						<a href="https://aimarketingholdings.net/" class="instagram"><i class="fa fa-instagram"></i></a>
+    						<a href="https://aimarketingholdings.net/" class="twitter"><i class="fa fa-twitter"></i></a>
+    					</div>
+    				</div> -->
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <!-- <div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
+    						<a href="https://aimarketingholdings.net/"><img src="./coin_files/appstore.png" alt="" class="mr-2"></a>
+    						<a href="https://aimarketingholdings.net/"><img src="./coin_files/playstore.png" alt=""></a>
+    					</div> -->
+                    <div class="col-lg-8 text-center text-lg-right">
+                        <ul class="footer-nav">
+                            <li><a href="https://aimarketingholdings.net/">DPA</a></li>
+                            <li><a href="https://aimarketingholdings.net/">Terms of Use</a></li>
+                            <li><a href="https://aimarketingholdings.net/">Privacy Policy </a></li>
+                            <li><a href="https://aimarketingholdings.net/">support@aimarketingholdings.net</a></li>
+                            <li><a href="https://aimarketingholdings.net/">(786) 651-5787</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="{% static 'coin_files/jquery-3.2.1.min.js.download' %}"></script>
+    <script src="{% static 'coin_files/owl.carousel.min.js.download' %}"></script>
+    <script src="{% static 'coin_files/main.js.download' %}"></script>
+
+</body>
+
+</html>

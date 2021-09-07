@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.aimarketingholdings.com/account/?link=fund2 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="FX Digitrades. User Trading Dashboard">
+<meta name="viewport" content="width=device-width">
+<title>FX Digitrades. | User Dashboard</title>
+ 
+<link rel="stylesheet" href="{% static 'fund_files/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/elegant.min.css' %}">
+<link id="site-color" rel="stylesheet" href="{% static 'fund_files/color-default.min.css' %}">
+<!--link rel="stylesheet" href="./assets/global/plugins/switchery/dist/switchery.min.css"/-->
+<link rel="stylesheet" href="{% static 'fund_files/perfect-scrollbar.min.css' %}">
+ 
+ 
+<link rel="stylesheet" href="{% static 'fund_files/font-awesome.min.css' %}">
+<!--link rel="stylesheet" href="./assets/global/plugins/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons-wind.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/morris.js/morris.min.css"/-->
+<link rel="stylesheet" href="{% static 'fund_files/rickshaw.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/flatpickr.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'fund_files/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/owl.theme.default.min.css' %}">
+ 
+<link rel="stylesheet" href="{% static 'fund_files/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/responsive.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/scroller.bootstrap4.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'fund_files/dropify.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/components.min.css' %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+ 
+<link rel="stylesheet" href="{% static 'fund_files/layout.min.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/login.css' %}">
+<link rel="stylesheet" href="{% static 'fund_files/register-v1.css' %}">
+ 
+</head><body class="loaded">
+	<div class="loader-overlay">
+		<div class="loader-preview-area">
+			<div class="spinners">
+				<div class="loader">
+					<div class="rotating-plane"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<header id="header">
+			<div class="row">
+				<div class="col-sm-4 col-xl-2 header-left">
+					<div class="logo float-xs-left">
+						<!--a href="../"><img src="./assets/global/image/web-logo.png" alt="logo"></a-->
+						<a href="https://www.aimarketingholdings.com/" 
+						style="color:#fff; font:16pt bold;"><img src="{% static 'fund_files/logo.png' %}" alt="logo" style="height:25px; background-color:#fff; padding: 0px 5px;">.</a>
+					</div>
+					<button class="left-menu-toggle float-xs-right">
+					<i class="fas fa-bars toggle-icon"></i>
+					</button>
+					<button class="right-menu-toggle float-xs-right">
+						<!-- <i class="arrow_carrot-left toggle-icon"></i> -->
+					</button>
+				</div>
+				<div class="col-sm-8 col-xl-10 header-right">
+					<div class="header-inner-right">
+						<div class="float-default searchbox">
+							<!-- <div class="right-icon">
+								<a href="javascript:void(0)">
+									<i class="icon_search"></i>
+								</a>
+							</div> -->
+						</div>
+						<div class="float-default mail">
+						<!-- <div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" aria-expanded="true">
+								<i class="icon_mail_alt"></i><span class="mail-no">1</span>
+							</a>
+							<div class="dropdown-menu messagetoggle" role="menu">
+								<div class="nav-tab-horizontal">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="https://www.aimarketingholdings.com/account/?link=fund2#messages" role="tab">Message</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content">
+									<div class="tab-pane active ps-container ps-theme-default" id="messages" role="tabpanel" data-plugin="custom-scroll" data-height="320" data-ps-id="b215a414-db47-0d6d-2681-768752ecca71" style="height: 320px;">
+										<ul class="userMessagedrop">
+											<li>
+												<a href="https://www.aimarketingholdings.com/account/?link=inbox">
+													<div class="media">
+														<div class="media-left float-xs-left">
+															<span class="label label-primary"><i class="icon_plus"></i></span>
+														</div>
+														<div class="media-body">
+															<h6>Stay up-to-date with your inbox</h6>
+															<p>You have 1 total messages in your inbox. Click to view.</p>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+								</div>
+							</div>
+						</div> -->
+					</div>
+					
+					<!--div class="float-default chat">
+						<div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" data-animation="slideOutUp" aria-expanded="false">
+								<i class="icon_chat_alt"></i><span class="mail-no">8</span>
+							</a>
+							<ul class="dropdown-menu userChat">
+								<li>
+									<a href="#">
+										<div class="media">
+											<div class="media-left float-xs-left">
+												<img src="./assets/global/image/image1-profile.jpg" alt="message"/>
+											</div>
+											<div class="media-body">
+												<h5>Judy Fowler</h5>
+												<p>Dummy text of the printing...</p>
+												<div class="status online"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div-->
+					
+					<div class="float-default chat">
+						<!-- <div class="right-icon">
+							<a href="https://www.aimarketingholdings.com/account/?link=fund2#" data-plugin="fullscreen">
+								<i class="arrow_expand"></i>
+							</a>
+						</div> -->
+					</div>
+					
+					<div class="user-dropdown">
+						<div class="btn-group">
+							<a href="" class="user-header dropdown-toggle" data-toggle="dropdown" data-animation="slideOutUp" aria-haspopup="true" aria-expanded="false">
+								<img src="{% static 'referral_files/avatar2.png' %}" alt="Profile image">
+							</a>
+							<div class="dropdown-menu drop-profile">
+								<div class="userProfile">
+									<img src="{% static 'referral_files/avatar2.png' %}" alt="Profile image">
+									<h5>{{ request.user.first_name }}</h5>
+									<p>{{ request.user.email }}</p>
+								</div>
+								<div class="dropdown-divider"></div>
+								<a class="btn left-spacing link-btn" href="{% url 'account:my_profile' %}" role="button">My profile</a>
+								<!--a class="btn left-second-spacing link-btn" href="?link=change_pass" role="button">Change Password</a-->
+								<a class="btn btn-primary float-xs-right right-spacing" href="{% url 'account:logout' %}" role="button">Logout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header> 
+<section id="main" class="container-fluid">
+	<div class="row">
+	 
+		{% include "core/side.html" %}
+	<script type="text/javascript">
+var currency = "USD";
+var btc_val = "";
+function btc_check(){
+	var a = $("#payform #amt").val();
+	var amt = a.replace(',','');
+	var disp = "#btc_disp";
+	
+	if(amt == ""){
+		$(disp).html("Please enter amount in "+currency);
+		return false;
+	} else {
+		//$("#p_btn").hide();
+		$(disp).html('Getting BTC value... <img src="assets/img/fbksmall.gif" style="width:40px; height:20px"/><br>');
+		$.get('https://blockchain.info/tobtc', {currency:currency, value:amt},
+		/* $.get('https://api.blockchain.info/v2/receive', {
+			xpub: "xpub6Brzqfk1kWnwYS5tp6v1Jh9Y3GV6NwJNcHGnteiZLTrLUmLVX6if22zgagYdtynS56tjjiagUzDuGfMdyHsqd6A9gFkiACAybtJwwhyKpeD", 
+			key: "fdc9a1d6-de8c-46a9-9302-0af08678147a",
+			callback: "https://rocknetfx.com/account/?link=fund2"
+			}, */
+			function(data){
+				if (data == ""){ $(disp).html('Getting BTC value... <img src="assets/img/fbksmall.gif" style="width:40px; height:20px"/>'); } else {
+				$(disp).html('<font color="#22a" style="font-weight:bold">'+data+' BTC</font><br/>');
+				btc_val = data;
+				}
+				$("#p_btn").show();
+				$("#p_btn").text('Fund My Account');
+			}).error(function(){ 
+				$(disp).html('<font color="red">Error in retrieving BTC value!</font><br/>');
+				$("#p_btn").show();
+				$("#p_btn").text('Proceed Anyway');
+			});
+       
+	return true;
+	}
+}
+//--------------------------------------------------------------------------------------------------------------------------
+function pay_check(){
+	var amt = $("#payform #amt").val().replace(',','');
+	var usr_id = $('#payform #user_id').val();
+	var usr = $('#payform #username').val();
+	var disp = "#btc_disp";
+	
+	if(amt == ""){
+		$(disp).html("Please enter amount in "+currency);
+		return false;
+	} else {
+		//$("#p_btn").hide();
+		$(disp).html('Please wait... <img src="assets/img/fbksmall.gif" style="width:30px; height:15px"/><br>');
+		//Generate Payment Address
+		$.post('includes/parse/btc.php', {user:usr, usr_id:usr_id, amt:amt, btc_val:btc_val, curr:currency},
+			function(data){
+				//$(disp).html('<font color="#22a" style="font-weight:bold">'+data+'</font>');
+				var ret_data = JSON.parse(data);
+				$(disp).html('<br><font color="#22a">'+ret_data.message+'</font>');
+				$(disp).append('<br><font color="#a22" style="font-weight:bold" id="addr">'+ret_data.pay_to+'</font> <i onClick="copyText(\'addr\')" class="fa fa-copy"></i>');
+				$(disp).append('<br>ORDER ID: <font color="#2a2" style="font-weight:bold">'+ret_data.orderID+'</font>');
+				$(disp).append('<br><br/>');
+				$("#p_btn").show();
+			}).error(function(){ 
+				$(disp).html('<font color="red">Error in Generating Wallet Address!</font>');
+				$("#p_btn").show();
+			});
+       
+	return true;
+	}
+}
+</script>
+
+	<section id="content-wrapper" class="form-elements">
+		<div class="site-content-title">
+			<h2 class="float-xs-left content-title-main">Dashboard</h2>
+		 
+			<!-- <ol class="breadcrumb float-xs-right">
+				<li class="breadcrumb-item">
+					<span class="fs1" aria-hidden="true" data-icon="?"></span>
+				</li>
+				<li class="breadcrumb-item"><a href="https://www.aimarketingholdings.com/account/?link=fund2#">Main</a></li>
+				<li class="breadcrumb-item">fund2</li>
+			</ol>
+		  -->
+		</div>
+		
+		<div class="contain-inner dashboard-v1 col-md-12">
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="col-md-6">
+					<div class="list-group-item">
+						<h4 style="cursor:pointer" class="list-group-item-heading">Automated Payment Processor</h4>
+						<p class="list-group-item-text">
+							  Payment Option: <span class="search_ad   bitcoin-color">BITCOIN</span>
+							 </p>
+							 <form method="post">
+							 {% csrf_token %}
+								<p>Enter amount to deposit in USD. We will calculate the corresponding bitcoin value for you.</p>
+								<p>Note: Minimum deposit is <Strong>{{ plan.min_price }}</Strong></p>
+								<p>Note: Maximum deposit is <Strong>{{ plan.max_price }}</Strong></p>
+								{{ form.as_p }}
+								<input type="submit" class="btn btn-primary" value="Fund my account" />
+							 </form>
+						<p></p>
+					</div>
+				</div>
+				
+		
+			</div>
+			
+	</section>	 
+	</div>
+</section>
+ 
+<p><br></p>
+<div class="site-footer">
+<footer id="footer">
+	Copyright© 2021, All Rights Reserved.
+</footer>
+</div>
+
+</div>
+
+<script src="./fund_files/main.js.download" type="text/javascript"></script>
+<script src="./fund_files/ajax.js.download" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="{% static 'fund_files/jquery.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/tether.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/bootstrap.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/perfect-scrollbar.jquery.min.js.download' %}"></script>
+<!--script type="text/javascript" src="./assets/global/plugins/switchery/dist/switchery.min.js"></script-->
+<script type="text/javascript" src="{% static 'fund_files/screenfull.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/classie.js.download' %}"></script>
+ 
+ 
+<!--script type="text/javascript" src="./assets/global/plugins/raphael/raphael.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/morris.js/morris.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/arcseldon-jquery.sparkline/dist/jquery.sparkline.js"></script-->
+<script type="text/javascript" src="{% static 'fund_files/owl.carousel.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/progressbar.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/coolclock.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/d3.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/rickshaw.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'fund_files/jquery.dataTables.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/dataTables.bootstrap4.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/dataTables.responsive.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/responsive.bootstrap4.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/dataTables.scroller.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'fund_files/dropify.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/flatpickr.min.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'fund_files/site.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/site-settings.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'fund_files/dropify.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'fund_files/datatable.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'fund_files/dashboard_v1.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'fund_files/mail.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'fund_files/layout.min.js.download' %}"></script>
+ 
+
+</body></html>

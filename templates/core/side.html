@@ -1,0 +1,44 @@
+<aside id="sidebar">
+			<div class="sidebar-search">
+				<input id="live-search-box" type="search" class="form-control input-sm" placeholder="Search...">
+				<a href="javascript:void(0)"><i class="search-close icon_search"></i></a>
+			</div>
+			<div class="sidebar-menu">
+				<ul class="nav site-menu live-search-list" id="site-menu" data-plugin="custom-scroll"
+					data-suppress-scroll-x="true" data-height="100%">
+					<li class="menu-title"><i class="fas fa-ellipsis-v"></i><span>Main Menu</span>
+						<ul class="main-menu">
+							<li class="sub-item"><a href="{% url 'core:dashboard' %}">Home (Dashboard)</a></li>
+							<li class="sub-item"><a href="{% url 'core:fund_account' %}">Fund My Account</a></li>
+							<li class="sub-item"><a href="{% url 'core:withdraw' %}">Make Withdrawal</a></li>
+						</ul>
+					</li>
+					<li class="menu-title"><i class="far fa-file-alt"></i><span>User Pages</span>
+						<ul class="main-menu">
+							<li class="sub-item">
+								<a href="javascript:void(0)">
+									<span>Profile</span>
+									<span class="float-xs-right"><i class="fas fa-plus"></i></span>
+								</a>
+								<ul class="sub-menu">
+									<li><a href="{% url 'account:my_profile' %}">My Profile</a></li>
+									<li><a href="{% url 'account:edit' %}">Edit Profile</a></li>
+									<li><a href="{% url 'account:password_change' %}">Change Password</a></li>
+								</ul>
+							</li>
+		
+							<li class="sub-item"><a href="{% url 'core:my_referrals' %}">My Referrals</a></li>
+		
+						</ul>
+					</li>
+		
+					<li class="menu-title"><a href="{% url 'account:logout' %}" title="Logout"><i class="fas fa-lock"></i> Logout </a>
+					</li><br />
+				</ul>
+			</div>
+			<div class="sidebar-extra">
+				<a href="{% url 'account:logout' %}" title="Logout"><i class="icon_lock_alt"></i></a>
+				<a href="#"><i class="icon_key_alt"></i></a>
+				<a href="{% url 'account:password_change' %}" title="Change Password"><i class="icon_lock-open_alt"></i></a>
+			</div>
+		</aside>

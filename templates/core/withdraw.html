@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.aimarketingholdings.com/account/?link=withdraw -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="FX Digitrades. User Trading Dashboard">
+<meta name="viewport" content="width=device-width">
+<title>FX Digitrades. | User Dashboard</title>
+ 
+<link rel="stylesheet" href="{% static 'withdraw_files/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/elegant.min.css' %}">
+<link id="site-color" rel="stylesheet" href="{% static 'withdraw_files/color-default.min.css' %}">
+<!--link rel="stylesheet" href="./assets/global/plugins/switchery/dist/switchery.min.css"/-->
+<link rel="stylesheet" href="{% static 'withdraw_files/perfect-scrollbar.min.css' %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+ 
+<link rel="stylesheet" href="{% static 'withdraw_files/font-awesome.min.css' %}">
+<!--link rel="stylesheet" href="./assets/global/plugins/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons-wind.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/morris.js/morris.min.css"/-->
+<link rel="stylesheet" href="{% static 'withdraw_files/rickshaw.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/flatpickr.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'withdraw_files/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/owl.theme.default.min.css' %}">
+ 
+<link rel="stylesheet" href="{% static 'withdraw_files/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/responsive.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/scroller.bootstrap4.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'withdraw_files/dropify.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/components.min.css' %}">
+ 
+ 
+<link rel="stylesheet" href="{% static 'withdraw_files/layout.min.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/login.css' %}">
+<link rel="stylesheet" href="{% static 'withdraw_files/register-v1.css' %}">
+ 
+</head><body class="loaded">
+	<div class="loader-overlay">
+		<div class="loader-preview-area">
+			<div class="spinners">
+				<div class="loader">
+					<div class="rotating-plane"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<header id="header">
+			<div class="row">
+				<div class="col-sm-4 col-xl-2 header-left">
+					<div class="logo float-xs-left">
+						<!--a href="../"><img src="./assets/global/image/web-logo.png" alt="logo"></a-->
+						<a href="https://www.aimarketingholdings.com/" style="color:#fff; font:16pt bold;">
+						<img src="{% static 'withdraw_files/logo.png' %}" alt="logo" style="height:25px; background-color:#fff; padding: 0px 5px;">.</a>
+					</div>
+					<button class="left-menu-toggle float-xs-right">
+					<i class="fas fa-bars toggle-icon"></i>
+					</button>
+					<button class="right-menu-toggle float-xs-right">
+						<!-- <i class="arrow_carrot-left toggle-icon"></i> -->
+					</button>
+				</div>
+				<div class="col-sm-8 col-xl-10 header-right">
+					<div class="header-inner-right">
+						<div class="float-default searchbox">
+							<!-- <div class="right-icon">
+								<a href="javascript:void(0)">
+									<i class="icon_search"></i>
+								</a>
+							</div> -->
+						</div>
+						<div class="float-default mail">
+						<!-- <div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" aria-expanded="true">
+								<i class="icon_mail_alt"></i><span class="mail-no">1</span>
+							</a>
+							<div class="dropdown-menu messagetoggle" role="menu">
+								<div class="nav-tab-horizontal">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="https://www.aimarketingholdings.com/account/?link=withdraw#messages" role="tab">Message</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content">
+									<div class="tab-pane active ps-container ps-theme-default" id="messages" role="tabpanel" data-plugin="custom-scroll" data-height="320" data-ps-id="5c0385c5-59ad-d6b1-f943-cfa533fb016f" style="height: 320px;">
+										<ul class="userMessagedrop">
+											<li>
+												<a href="https://www.aimarketingholdings.com/account/?link=inbox">
+													<div class="media">
+														<div class="media-left float-xs-left">
+															<span class="label label-primary"><i class="icon_plus"></i></span>
+														</div>
+														<div class="media-body">
+															<h6>Stay up-to-date with your inbox</h6>
+															<p>You have 1 total messages in your inbox. Click to view.</p>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+								</div>
+							</div>
+						</div> -->
+					</div>
+					
+					<!--div class="float-default chat">
+						<div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" data-animation="slideOutUp" aria-expanded="false">
+								<i class="icon_chat_alt"></i><span class="mail-no">8</span>
+							</a>
+							<ul class="dropdown-menu userChat">
+								<li>
+									<a href="#">
+										<div class="media">
+											<div class="media-left float-xs-left">
+												<img src="./assets/global/image/image1-profile.jpg" alt="message"/>
+											</div>
+											<div class="media-body">
+												<h5>Judy Fowler</h5>
+												<p>Dummy text of the printing...</p>
+												<div class="status online"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div-->
+					
+					<div class="float-default chat">
+						<!-- <div class="right-icon">
+							<a href="https://www.aimarketingholdings.com/account/?link=withdraw#" data-plugin="fullscreen">
+								<i class="arrow_expand"></i>
+							</a>
+						</div> -->
+					</div>
+					
+					<div class="user-dropdown">
+						<div class="btn-group">
+							<a href="" class="user-header dropdown-toggle" data-toggle="dropdown" data-animation="slideOutUp" aria-haspopup="true" aria-expanded="false">
+								<img src="{% static 'referral_files/avatar2.png' %}" alt="Profile image">
+							</a>
+							<div class="dropdown-menu drop-profile">
+								<div class="userProfile">
+									<img src="{% static 'referral_files/avatar2.png' %}" alt="Profile image">
+									<h5>{{ request.user.first_name }}</h5>
+									<p>{{ request.user.email }}</p>
+								</div>
+								<div class="dropdown-divider"></div>
+								<a class="btn left-spacing link-btn" href="{% url 'account:my_profile' %}" role="button">My profile</a>
+								<!--a class="btn left-second-spacing link-btn" href="?link=change_pass" role="button">Change Password</a-->
+								<a class="btn btn-primary float-xs-right right-spacing" href="{% url 'account:logout' %}" role="button">Logout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header> 
+<section id="main" class="container-fluid">
+	<div class="row">
+	 
+	{% include "core/side.html" %}
+		<section id="content-wrapper" class="form-elements">
+		<div class="site-content-title">
+			<h2 class="float-xs-left content-title-main">Dashboard</h2>
+		 
+			<ol class="breadcrumb float-xs-right">
+				<li class="breadcrumb-item">
+					<!-- <span class="fs1" aria-hidden="true" data-icon="?"></span> -->
+					<!-- <a href="https://www.aimarketingholdings.com/account/index.php">Home</a> -->
+				</li>
+				<!-- <li class="breadcrumb-item"><a href="https://www.aimarketingholdings.com/account/?link=withdraw#">Main</a></li> -->
+				<!-- <li class="breadcrumb-item">withdraw</li> -->
+			</ol>
+		 
+		</div>
+		<!-- BEGIN PAGE CONTENT-->
+		<div class="contain-inner dashboard-v1">
+			<div class="card col-md-8">
+				<div class="card-block">
+										
+						<form method="post">
+						{% csrf_token %}
+						{{ form }}
+
+
+
+
+						
+						{% comment %} <div class="form-group">
+							<label class="control-label">Username</label>
+							<input type="text" class="form-control" value="Camilletyler" name="username" required="">
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email</label>
+							<input type="email" class="form-control" value="camillemiatyler23@gmail.com" name="email" required="">
+						</div>
+						<div class="form-group">
+							<label class="control-label">Amount to Withdraw</label>
+							<input type="number" class="form-control" name="amt" required="">
+						</div>
+						<div class="form-group">
+							<label class="control-label">Wallet Type</label>
+							<input type="text" class="form-control" placeholder="Eg: BITCOIN" name="wallet" required="">
+						</div>
+						<div class="form-group">
+							<label class="control-label">Wallet Address</label>
+							<input type="text" class="form-control" placeholder="Enter the Receiving Address" name="wal_adr" required="">
+						</div>
+
+						<input type="hidden" value="32680" name="avail_witd"> {% endcomment %}
+						
+						<div class="margin-top-10">
+							<button type="submit" class="btn btn-primary" name="withdraw">
+							Request Fund Withdrawal </button>
+							{% comment %} <button type="reset" class="btn btn-default">
+							Cancel </button> {% endcomment %}
+						</div>
+					</form>
+					<p></p></div>
+				</div>
+
+				<div class="card col-md-4">
+					<!-- <div class="col-md-12">
+						<div class="card-block card-b"><p>
+							</p><h4>TOTAL AMOUNT IN ACCOUNT</h4>
+							<span style="font:9pt italic">(Balance + Profit + Commissions)</span>
+							<h2>$62680</h2>
+						<p></p></div>
+						<hr>
+						<div class="card-block card-b"><p>
+							</p><h4>AVAILABLE FOR WITHDRAWAL</h4>
+							<span style="font:9pt italic">(Matured Profit + Commissions)</span>
+							<h2>$32680</h2>
+						<p></p></div>
+
+					</div> -->
+				</div>
+		</div>
+	</section>	 
+	</div>
+</section>
+ 
+<p><br></p>
+<div class="site-footer">
+<footer id="footer">
+	Copyright© 2021, All Rights Reserved.
+</footer>
+</div>
+
+</div>
+
+<script src="{% static 'withdraw_files/main.js.download' %}" type="text/javascript"></script>
+<script src="{% static 'withdraw_files/ajax.js.download' %}" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="{% static 'withdraw_files/jquery.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/tether.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/bootstrap.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/perfect-scrollbar.jquery.min.js.download' %}"></script>
+<!--script type="text/javascript" src="./assets/global/plugins/switchery/dist/switchery.min.js"></script-->
+<script type="text/javascript" src="{% static 'withdraw_files/screenfull.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/classie.js.download' %}"></script>
+ 
+ 
+<!--script type="text/javascript" src="./assets/global/plugins/raphael/raphael.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/morris.js/morris.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/arcseldon-jquery.sparkline/dist/jquery.sparkline.js"></script-->
+<script type="text/javascript" src="{% static 'withdraw_files/owl.carousel.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/progressbar.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/coolclock.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/d3.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/rickshaw.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'withdraw_files/jquery.dataTables.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/dataTables.bootstrap4.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/dataTables.responsive.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/responsive.bootstrap4.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/dataTables.scroller.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'withdraw_files/dropify.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/flatpickr.min.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'withdraw_files/site.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/site-settings.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'withdraw_files/dropify.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'withdraw_files/datatable.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'withdraw_files/dashboard_v1.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'withdraw_files/mail.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'withdraw_files/layout.min.js.download' %}"></script>
+ 
+
+</body></html>

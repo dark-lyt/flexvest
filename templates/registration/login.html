@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://www.FinexInvestment.com/account/login -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="description" content="FinexInvestment. User Trading Dashboard">
+    <meta name="viewport" content="width=device-width">
+    <title>FinexInvestment | User Dashboard</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'login_files/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/elegant.min.css' %}">
+    <link id="site-color" rel="stylesheet" href="{% static 'login_files/color-default.min.css' %}">
+    <!--link rel="stylesheet" href="./assets/global/plugins/switchery/dist/switchery.min.css"/-->
+    <link rel="stylesheet" href="{% static 'login_files/perfect-scrollbar.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'login_files/font-awesome.min.css' %}">
+    <!--link rel="stylesheet" href="./assets/global/plugins/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/weather-icons/css/weather-icons-wind.min.css"/>
+<link rel="stylesheet" href="./assets/global/plugins/morris.js/morris.min.css"/-->
+    <link rel="stylesheet" href="{% static 'login_files/rickshaw.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/flatpickr.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'login_files/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'login_files/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/scroller.bootstrap4.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'login_files/dropify.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/components.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'login_files/layout.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/login.css' %}">
+    <link rel="stylesheet" href="{% static 'login_files/register-v1.css' %}">
+
+</head>
+
+<body>
+    <div class="login-background">
+        <h1 class="reg_head" style="color: #fff;">
+            Sign Up
+            <p>
+                Please fill the form to register.
+            </p>
+        </h1>
+        <div class="login-page">
+            <div class="main-login-contain">
+                <!-- <div class="login-circul text-xs-center">
+					<i class="icon_lock_alt login-icon-circul"></i>
+				</div> -->
+                <div class="login-form">
+                    <form  method="post">
+                    {% csrf_token %}
+                        <div class="login_input">
+                        {{ form.email.errors }}
+                            <input type="text" class="login-form-border" id="id_username" name="username"
+                                placeholder="Enter Username or Email">
+                            <span class="login-right-icon"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <div class="login_input">
+                        {{ form.password.errors }}
+                            <input type="password" class="login-form-border" id="id_password" name="password"
+                                placeholder="Password">
+                            <span class="login-right-icon"><i class="fas fa-key"></i></span>
+                        </div>
+                        {% comment %} <div class="checkbox checkbox-login-v1"> {% endcomment %}
+
+                            {% comment %} {{ form.remember_me }} {% endcomment %}
+                            {% comment %} <input value="yes" id="checkbox-squared1" name="keep" class="keep"
+                                type="checkbox">
+                            <label for="checkbox-squared1"></label>
+                            <span>Remember me</span> {% endcomment %}
+                        </div>
+                        <p id="stat" style="color:red"></p>
+                        <input type="submit" class="btn btn-primary btn-login" id="loginbtn" value='Login' />
+                        <div class="goto-login">
+                            <div class="sign-up-login">
+                                <i class="fas fa-arrow-left"></i>
+                                Go to <a href="{% url 'account:signup' %}">Sign up</a>
+                            </div>
+                            <div class="forgot-password-login">
+                                <a href="{% url 'account:password_change' %}">
+                                    Forgot password?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'login_files/ajax.js.download' %}" type="text/javascript"></script>
+    <script src="{% static 'login_files/main.js.download' %}" type="text/javascript"></script>
+</body>
+
+</html>

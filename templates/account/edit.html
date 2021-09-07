@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Edit your account{% endblock %}
+{% block content %}
+
+                <div class="bgnew">
+            {% comment %} enctype="multipart/form-data {% endcomment %}
+            <div id="msg">
+            {% if form.errors %}
+              <div class="error">
+                <p><span>ERROR</span></p>
+              <ul>
+                {% for key, value in form.errors.items %}
+                    <li>{{ value }}</li>
+                  {% endfor %}
+            
+            </ul>
+            </div>
+            {% endif %}
+          </div>
+            
+       <div class="login-page" ng-controller="LGN" ng-cloak>
+      <div class="login-row">
+        <div class="login-wrap fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.6s"style="border:2px solid black;background:whitesmoke;">
+               
+            <center>
+            <div class="bgnew">
+                <h1>Edit your account</h1>
+    <p>You can edit your account using the following form:</p>
+                <form action="." method="post" enctype="multipart/form-data">
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Save changes"></p>
+                </form>
+        </div>
+                 </center>
+        </div>
+        
+    </div>
+{% endblock %}

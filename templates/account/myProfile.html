@@ -1,0 +1,352 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.aimarketingholdings.com/account/?link=profile -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="FX Digitrades. User Trading Dashboard">
+<meta name="viewport" content="width=device-width">
+<title>FX Digitrades. | User Dashboard</title>
+ 
+<link rel="stylesheet" href="{% static 'myProfile_files/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/elegant.min.css' %}">
+<link id="site-color" rel="stylesheet" href="{% static 'myProfile_files/color-default.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/perfect-scrollbar.min.css' %}">
+ 
+ 
+<link rel="stylesheet" href="{% static 'myProfile_files/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/rickshaw.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/flatpickr.min.css' %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'myProfile_files/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/owl.theme.default.min.css' %}">
+ 
+<link rel="stylesheet" href="{% static 'myProfile_files/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/responsive.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/scroller.bootstrap4.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'myProfile_files/dropify.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/components.min.css' %}">
+ 
+ 
+<link rel="stylesheet" href="{% static 'myProfile_files/layout.min.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/login.css' %}">
+<link rel="stylesheet" href="{% static 'myProfile_files/register-v1.css' %}">
+ 
+</head><body class="loaded">
+	<div class="loader-overlay">
+		<div class="loader-preview-area">
+			<div class="spinners">
+				<div class="loader">
+					<div class="rotating-plane"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<header id="header">
+			<div class="row">
+				<div class="col-sm-4 col-xl-2 header-left">
+					<div class="logo float-xs-left">
+						<!--a href="../"><img src="./assets/global/image/web-logo.png" alt="logo"></a-->
+						<a href="https://www.aimarketingholdings.com/" style="color:#fff; font:16pt bold;">
+						<img src="{% static 'myProfile_files/logo.png' %}" alt="logo" style="height:25px; background-color:#fff; padding: 0px 5px;">.</a>
+					</div>
+					<button class="left-menu-toggle float-xs-right">
+					<i class="fas fa-bars toggle-icon"></i>
+					</button>
+					<button class="right-menu-toggle float-xs-right">
+						<i class="arrow_carrot-left toggle-icon"></i>
+					</button>
+				</div>
+				<div class="col-sm-8 col-xl-10 header-right">
+					<div class="header-inner-right">
+						<div class="float-default searchbox">
+							<!-- <div class="right-icon">
+								<a href="javascript:void(0)">
+									<i class="icon_search"></i>
+								</a>
+							</div> -->
+						</div>
+						<div class="float-default mail">
+						<!-- <div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" aria-expanded="true">
+								<i class="icon_mail_alt"></i><span class="mail-no">1</span>
+							</a>
+							<div class="dropdown-menu messagetoggle" role="menu">
+								<div class="nav-tab-horizontal">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="https://www.aimarketingholdings.com/account/?link=profile#messages" role="tab">Message</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content">
+									<div class="tab-pane active ps-container ps-theme-default" id="messages" role="tabpanel" data-plugin="custom-scroll" data-height="320" data-ps-id="ff5984ff-2b0d-8971-7422-af0971c252d5" style="height: 320px;">
+										<ul class="userMessagedrop">
+											<li>
+												<a href="https://www.aimarketingholdings.com/account/?link=inbox">
+													<div class="media">
+														<div class="media-left float-xs-left">
+															<span class="label label-primary"><i class="icon_plus"></i></span>
+														</div>
+														<div class="media-body">
+															<h6>Stay up-to-date with your inbox</h6>
+															<p>You have 1 total messages in your inbox. Click to view.</p>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+								</div>
+							</div>
+						</div> -->
+					</div>
+					
+					<!--div class="float-default chat">
+						<div class="right-icon">
+							<a href="javascript:void(0)" data-toggle="dropdown" data-open="true" data-animation="slideOutUp" aria-expanded="false">
+								<i class="icon_chat_alt"></i><span class="mail-no">8</span>
+							</a>
+							<ul class="dropdown-menu userChat">
+								<li>
+									<a href="#">
+										<div class="media">
+											<div class="media-left float-xs-left">
+												<img src="./assets/global/image/image1-profile.jpg" alt="message"/>
+											</div>
+											<div class="media-body">
+												<h5>Judy Fowler</h5>
+												<p>Dummy text of the printing...</p>
+												<div class="status online"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div-->
+					
+					<div class="float-default chat">
+						<!-- <div class="right-icon">
+							<a href="https://www.aimarketingholdings.com/account/?link=profile#" data-plugin="fullscreen">
+								<i class="arrow_expand"></i>
+							</a>
+						</div> -->
+					</div>
+					
+					<div class="user-dropdown">
+						<div class="btn-group">
+							<a href="https://www.aimarketingholdings.com/account/?link=profile#" class="user-header dropdown-toggle" data-toggle="dropdown" data-animation="slideOutUp" aria-haspopup="true" aria-expanded="false">
+								<img src="{% static 'myProfile_files/Camilletyler2021-08-26_08-23.jpg' %}" alt="Profile image">
+							</a>
+							<div class="dropdown-menu drop-profile">
+								<div class="userProfile">
+									<img src="{% static 'myProfile_files/Camilletyler2021-08-26_08-23.jpg' %}" alt="Profile image">
+									<h5>{{ request.user.first_name }}</h5>
+									<p>{{ request.user.email }}</p>
+								</div>
+								<div class="dropdown-divider"></div>
+								<a class="btn left-spacing link-btn" href="{% url 'account:my_profile' %}" role="button">My profile</a>
+								<!--a class="btn left-second-spacing link-btn" href="?link=change_pass" role="button">Change Password</a-->
+								<a class="btn btn-primary float-xs-right right-spacing" href="{% url 'account:logout' %}" role="button">Logout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header> 
+<section id="main" class="container-fluid">
+	<div class="row">
+	 
+	{% include "core/side.html" %}
+		<section id="content-wrapper" class="form-elements">
+		<div class="site-content-title">
+			<h2 class="float-xs-left content-title-main">My Profile</h2>
+		 
+			<ol class="breadcrumb float-xs-right">
+				<li class="breadcrumb-item">
+				</li>
+			</ol>
+		 
+		</div>
+		
+		<div class="col-md-12 profile-contain" style="background-color:#14213d;">
+			<div class="row">
+				<div class="col-xl-3 col-md-5 col-xs-12 contacts">
+					<div class="content text-xs-center">
+						<div class="image-profile"><img src="{% static 'myProfile_files/Camilletyler2021-08-26_08-23.jpg' %}" alt="Profile image"></div>
+						<h3 class="name-profile">{{ request.user.first_name }}</h3>
+						<h6 class="email-profile">{{ request.user.email }}</h6>
+					
+					</div>
+					<div class="content">
+						<div data-plugin="custom-scroll" data-height="200" class="ps-container ps-theme-default" data-ps-id="6ffdb9d9-7bbd-5ce0-34c6-4392f51394df" style="height: 200px;">
+							<div style="width: 100%;">
+								<h4 class="page-content-title">Settings</h4>
+								<div class="divider15"></div>
+								<ul class="setting-profile">
+									<li><a href="{% url 'account:edit' %}"><span class="icon_profile" aria-hidden="true"></span>Edit Profile</a></li>
+									<li><a href="{% url 'account:password_change' %}"><span class="icon_key" aria-hidden="true"></span>Change Password</a></li>
+								</ul>
+							</div>
+						<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+						<div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+						<div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;">
+						<div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+					</div>
+				</div>
+				
+				<div class="col-xl-9 col-md-7 col-xs-12">
+					<div class="con nt">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="page-content-title">Personal Information</h4>
+								<div class="divider15"></div>
+								<div class="personal-info-box">
+									<div class="row">
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">User Name :</div>
+											<div class="detail-profile float-xs-right">{{ profile.user.username }}</div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Full Name :</div>
+											<div class="detail-profile float-xs-right">{{ profile.user.first_name}} {{profile.user.last_name}}</div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Gender :</div>
+											<div class="detail-profile float-xs-right">{{ profile.gender }}</div>
+										</div>
+										{% comment %} <div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Date of Birth:</div>
+											<div class="detail-profile float-xs-right">0000-00-00</div>
+										</div> {% endcomment %}
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Country :</div>
+											<div class="detail-profile float-xs-right">{{ profile.country }}</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="divider-lg-spacing"></div>
+							<div class="col-md-12">
+								<h4 class="page-content-title">Contact Information</h4>
+								<div class="divider15"></div>
+								<div class="personal-info-box">
+									<div class="row">
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Email :</div>
+											<div class="detail-profile float-xs-right">{{ profile.user.email }}</div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Mobile No :</div>
+											<div class="detail-profile float-xs-right">{{ profile.phone_number }}</div>
+										</div>
+										{% comment %} <div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Tel 2 :</div>
+											<div class="detail-profile float-xs-right"> </div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Address :</div>
+											<div class="detail-profile float-xs-right"></div> {% endcomment %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="divider-lg-spacing"></div>
+							<div class="col-md-12">
+								<h4 class="page-content-title">Account Information</h4>
+								<div class="divider15"></div>
+								<div class="personal-info-box">
+									<div class="row">
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Referee :</div>
+											<div class="detail-profile float-xs-right">{{ profile.recomended_by }}</div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">My Referral Link :</div>
+											<div class="detail-profile float-xs-right"><a href="#">{{ link }}</a></div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Account Plan :</div>
+											<div class="detail-profile float-xs-right"> {{ plan }}</div>
+										</div>
+										<div class="user-name-profile col-xl-6 col-md-12 col-xs-12">
+											<div class="left-name-profile float-xs-left">Registration Date :</div>
+											<div class="detail-profile float-xs-right">{{ profile.user.date_joined }}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				
+				</div>
+			</div>
+		</div>
+	</section>	 
+	</div>
+</section>
+ 
+<p><br></p>
+<div class="site-footer">
+<footer id="footer">
+	Copyright© 2021, All Rights Reserved.
+</footer>
+</div>
+
+</div>
+
+<script src=" {% static 'myProfile_files/main.js.download' %}" type="text/javascript"></script>
+<script src=" {% static 'myProfile_files/ajax.js.download' %}" type="text/javascript"></script>
+ 
+<script type="text/javascript" src="{% static 'myProfile_files/jquery.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/tether.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/bootstrap.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/perfect-scrollbar.jquery.min.js.download' %}"></script>
+<!--script type="text/javascript" src="./assets/global/plugins/switchery/dist/switchery.min.js"></script-->
+<script type="text/javascript" src="{% static 'myProfile_files/screenfull.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/classie.js.download' %}"></script>
+ 
+ 
+<!--script type="text/javascript" src="./assets/global/plugins/raphael/raphael.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/morris.js/morris.min.js"></script>
+<script type="text/javascript" src="./assets/global/plugins/arcseldon-jquery.sparkline/dist/jquery.sparkline.js"></script-->
+<script type="text/javascript" src="{% static 'myProfile_files/owl.carousel.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/progressbar.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/coolclock.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/d3.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/rickshaw.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'myProfile_files/jquery.dataTables.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/dataTables.bootstrap4.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/dataTables.responsive.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/responsive.bootstrap4.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/dataTables.scroller.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'myProfile_files/dropify.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/flatpickr.min.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'myProfile_files/site.min.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/site-settings.min.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'myProfile_files/dropify.js.download' %}"></script>
+
+<script type="text/javascript" src="{% static 'myProfile_files/datatable.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'myProfile_files/dashboard_v1.js.download' %}"></script>
+<script type="text/javascript" src="{% static 'myProfile_files/mail.js.download' %}"></script>
+ 
+<script type="text/javascript" src="{% static 'myProfile_files/layout.min.js.download' %}"></script>
+ 
+
+</body>
+</html>

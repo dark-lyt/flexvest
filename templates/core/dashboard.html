@@ -1,0 +1,340 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="aimarketingholdings. User Trading Dashboard">
+    <meta name="viewport" content="width=device-width">
+    <title>aimarketingholdings. | User Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/icons_fonts/elegant_font/elegant.min.css' %}" />
+    <link id="site-color" rel="stylesheet" href="{% static 'assets/layouts/layout-left-menu/css/color/light/color-default.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/assets/global/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/rickshaw/rickshaw.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/flatpickr/dist/flatpickr.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/owl.carousel/dist/assets/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/owl.carousel/dist/assets/owl.theme.default.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/datatables/media/css/dataTables.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/datatables-scroller/css/scroller.bootstrap4.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/global/plugins/dropify/dist/css/dropify.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/global/css/components.min.css' %}" />
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="{% static 'assets/layouts/layout-left-menu/css/layout.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/pages/login/login-v1/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/pages/register/register-v1/css/register-v1.css' %}" />
+
+</head>
+
+<body>
+    <div class="loader-overlay">
+        <div class="loader-preview-area">
+            <div class="spinners">
+                <div class="loader">
+                    <div class="rotating-plane"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header id="header">
+            <div class="row">
+                <div class="col-sm-4 col-xl-2 header-left">
+                    <div class="logo float-xs-left">
+                        <a href="{% url 'core:home' %}" style="color:#fff; font:16pt bold;"><img src="{% static 'assets/img/logo.png' %}" alt="logo" style="height:25px; background-color:#fff; padding: 0px 5px;">.</a>
+                    </div>
+                    <button class="left-menu-toggle float-xs-right">
+                    <i class="fas fa-bars toggle-icon"></i>
+					</button>
+                    <button class="right-menu-toggle float-xs-right">
+                </div>
+                <div class="col-sm-8 col-xl-10 header-right">
+                    <div class="header-inner-right">
+                      
+                        <div class="float-default mail">
+                            <div class="right-icon">
+                                <a href="javascript:void(0)" data-toggle="dropdown" data-open="true" aria-expanded="true">
+                                    <i class="icon_mail_alt"></i><span class="mail-no">1</span>
+                                </a>
+                                <div class="dropdown-menu messagetoggle" role="menu">
+                                    <div class="nav-tab-horizontal">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#messages" role="tab">Message</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="messages" role="tabpanel" data-plugin="custom-scroll" data-height="320">
+                                            <ul class="userMessagedrop">
+                                                <li>
+                                                    <a href="?link=inbox">
+                                                        <div class="media">
+                                                            <div class="media-left float-xs-left">
+                                                                <span class="label label-primary"><i class="fas fa-plus"></i></span>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h6>Stay up-to-date with your inbox</h6>
+                                                                <p>You have 1 total messages in your inbox. Click to view.</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="float-default chat">
+                          
+                        </div>
+
+                        <div class="user-dropdown">
+                            <div class="btn-group">
+                                <a href="#" class="user-header dropdown-toggle" data-toggle="dropdown" data-animation="slideOutUp" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{% static 'uploads/avatar2.png' %}" alt="Profile image" />
+                                </a>
+                                <div class="dropdown-menu drop-profile">
+                                    <div class="userProfile">
+                                        <img src="{% static '' %}" alt="Profile image" />
+                                        <h5>Camilletyler</h5>
+                                        <p>camillemiatyler23@gmail.com</p>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class=" left-spacing link-btn" href="?link=profile" role="button">My profile</a>
+                                    <a class="btn btn-primary float-xs-right right-spacing" href="?link=logout" role="button">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="main" class="container-fluid">
+            <div class="row">
+
+                {% include "core/side.html" %}
+                <style>
+                    div.o_l {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;
+                        /* ie fallback png background image */
+                        z-index: 1000;
+                        color: white;
+                        text-align: center;
+                    }
+                    
+                    .o_l-text {
+                        color: white;
+                        z-index: 2000;
+                        margin: 50px auto;
+                        vertical-align: middle;
+                    }
+                </style>
+                <section id="content-wrapper" class="form-elements">
+                    <div class="site-content-title">
+                        <h2 class="float-xs-left content-title-main">Dashboard</h2>
+
+                        <ol class="breadcrumb float-xs-right">
+                            <li class="breadcrumb-item">
+                        </ol>
+
+                    </div>
+
+                    <div class="contain-inner dashboard-v1 dashboard-v2">
+
+                        <div class="divider25"></div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="dashboard-widget widget-box dashboard-xs-widget">
+                                            <div class="widget-content text-xs-right">
+                                            
+                                                <span class="large">Package</span>
+                                                <h4 class="text-red">{{ plan_title }}</h4>
+                                                <span class="email-text">{{ request.user.email}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="dashboard-widget widget-box">
+                                            <div class="widget-content text-xs-right">
+                                               
+                                                <span class="large">Amount</span>
+                                                <h4 class="text-red">{{ total_usd }}&#36;</h4>
+                                                <span class="search_ad bg-danger">account</span><span>Working Balance</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider-lg-spacing"></div>
+                                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="dashboard-widget widget-box dashboard-xs-widget">
+                                            <div class="widget-content text-xs-right">
+                                                
+                                                <span class="large">Profit/Loss</span>
+                                                <h4 class="text-red">{{ profit }}&#36;</h4> <span class="search_ad bg-success">Trade</span>
+                                                <span>Transactions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="dashboard-widget widget-box">
+                                            <div class="widget-content text-xs-right">
+                                               
+                                                <span class="large">Referral Bonus</span>
+                                                {% if commission == 0.0   %}
+                                                <h4 class="text-red">You have no commission</h4>
+                                                {% else %}
+                                                <h4 class="text-red">{{ commission }}$</h4>
+                                                {% endif %}
+                                                
+                                                <span class="search_ad">Ref</span><span>Account Commissions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider25"></div>
+
+                        <div class="row">
+                         
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                <div class="content">
+                                    <div class="dashboard-header">
+                                        <h4 class="page-content-title float-xs-left">Transaction History</h4>
+                                        <div class="dashboard-action">
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-box">
+                                        <div class="basic_table basic_table_responsive table-responsive">
+                                            <table class="table">
+                                                <thead class="thead">
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                        <th>Transaction Status</th>
+                                                        <th>Transaction Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                            
+                                                </tr>
+                                                
+                                                 {% if  history.status != paid %}
+                                                    <tr>									
+                                                        <td colspan="6" style="text-align:center;">
+                                                                You have no transaction history yet. <a href="#"> Invest </a>
+                                                        </td>
+                                                            
+                                                        </tr>
+                                                    {% elif history.count > 1 and history.status == paid%}
+                                                        {% for details in history %}
+                                                            <tr>
+                                                                <td>{{ details.id }}</td>
+                                                                <td>{{ detail.fait_amount}}&#36;</td>
+                                                                <td><span class="tag square-tag tag-success">
+                                                                    success
+                                                                </span></td>
+                                                                <td>Deposit</td>
+                                                                <td>
+                                                                    <span class="basic_table_icon"> {{ history.created_at }}</span> 
+                                                                </td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                 {% endif %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                       
+                      
+
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <p><br/></p>
+        <div class="site-footer">
+            <footer id="footer">
+                Copyright&copy; 2021, All Rights Reserved.
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="{% static 'assets/global/js/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'assets/global/js/ajax.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/plugins/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/tether/dist/js/tether.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/screenfull.js/dist/screenfull.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/ModalWindowEffects/js/classie.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/plugins/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/progressbar.js/dist/progressbar.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/CoolClock/coolclock.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/d3/d3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/rickshaw/rickshaw.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/plugins/datatables/media/js/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/datatables/media/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/datatables-responsive/js/dataTables.responsive.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/datatables-responsive/js/responsive.bootstrap4.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/datatables-scroller/js/dataTables.scroller.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/plugins/dropify/dist/js/dropify.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/plugins/flatpickr/dist/flatpickr.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/js/site.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/js/site-settings.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/js/global/dropify.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/js/global/datatable.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/global/js/global/dashboard_v1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/global/js/global/mail.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/layouts/layout-left-menu/js/layout.min.js' %}"></script>
+
+</body>
+
+</html>
