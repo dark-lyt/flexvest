@@ -13,4 +13,6 @@ urlpatterns = [
     path('signup/', views.register, name='signup'),
     path('mylink/<str:ref_code>/', views.getRecProfile, name='get_profile'),
     path('login/', views.user_login, name='login'),
+    path('sent/', views.activation_sent, name="activation_sent"),
+    path('activate/<slug:uidb64>/<slug:token>/', views.activate, name='activate'),
 ]

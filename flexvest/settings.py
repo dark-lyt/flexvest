@@ -25,6 +25,7 @@ SECRET_KEY = 'ssktzkcc4xvult8on$52)9w=rws%4o!g17zhqp1zspb%85^*a*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'https://127.0.0.1:8000/']
 ALLOWED_HOSTS = ['*']
 
 
@@ -128,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -154,9 +156,6 @@ CRYPTOCURRENCY_PAYMENT = {
 
 
 
-
-
-
 SITE_ID = 1
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
@@ -166,8 +165,18 @@ LOGOUT_REDIRECT_URL = 'core:home'
 LOGIN_URL = 'account:login'
 LOGOUT_URL = 'account:logout'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'aimarketholdings.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+# EMAIL_PORT = 587
+EMAIL_HOST_USER = "admin@aimarketholdings.com"
+EMAIL_HOST_PASSWORD = 'iWc?,Ec6.Oac'
+
+ADMINS = (
+    ('admin', 'AImarketholding@gmail.com'),
+)
 
 #HTTPS SETTINGS
 # SECURE_HSTS_SECONDS = 31536000 # 1 YEAR

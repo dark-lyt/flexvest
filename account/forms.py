@@ -74,9 +74,9 @@ class UserEditForm(forms.ModelForm):
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('country', 'phone_number', 'gender')
+        fields = ('country', 'phone_number')
         widgets = {
-            'gender': forms.RadioSelect(attrs={"class": "uniform-inline"}),
+            # 'gender': forms.RadioSelect(attrs={"class": "uniform-inline"}),
             'country': CountrySelectWidget(attrs={'class': 'form-group form-control col-6'},
                                            layout='{widget}<img class="country-select-flag" id="{flag_id}" style="margin: 0px 0px 0px 0px; width:30px; height:30px" src="{country.flag}">'),
             'phone_number': PhoneNumberField.hidden_widget(attrs={'class': 'form-group form-control'})

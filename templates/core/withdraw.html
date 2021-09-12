@@ -186,9 +186,22 @@
 		</div>
 		<!-- BEGIN PAGE CONTENT-->
 		<div class="contain-inner dashboard-v1">
+		
 			<div class="card col-md-8">
 				<div class="card-block">
-										
+							{% if messages %}
+			<div class="mt-5 pt-4">
+				{% for message in messages %}
+				<div class="alert alert-{{ message.tags}} alert-dismissible fade show" role="alert">
+					{{ message }}
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			
+				{% endfor %}
+			</div>
+			{% endif %}			
 						<form method="post">
 						{% csrf_token %}
 						{{ form }}
@@ -197,34 +210,14 @@
 
 
 						
-						{% comment %} <div class="form-group">
-							<label class="control-label">Username</label>
-							<input type="text" class="form-control" value="Camilletyler" name="username" required="">
-						</div>
-						<div class="form-group">
-							<label class="control-label">Email</label>
-							<input type="email" class="form-control" value="camillemiatyler23@gmail.com" name="email" required="">
-						</div>
-						<div class="form-group">
-							<label class="control-label">Amount to Withdraw</label>
-							<input type="number" class="form-control" name="amt" required="">
-						</div>
-						<div class="form-group">
-							<label class="control-label">Wallet Type</label>
-							<input type="text" class="form-control" placeholder="Eg: BITCOIN" name="wallet" required="">
-						</div>
-						<div class="form-group">
-							<label class="control-label">Wallet Address</label>
-							<input type="text" class="form-control" placeholder="Enter the Receiving Address" name="wal_adr" required="">
-						</div>
-
-						<input type="hidden" value="32680" name="avail_witd"> {% endcomment %}
+					
 						
 						<div class="margin-top-10">
-							<button type="submit" class="btn btn-primary" name="withdraw">
-							Request Fund Withdrawal </button>
-							{% comment %} <button type="reset" class="btn btn-default">
-							Cancel </button> {% endcomment %}
+						{% if granted %}
+							<input type="submit" class="btn btn-primary" name="withdraw" value="Request Fund Withdrawal"/>
+						{% else %}
+							<p> You are currently unable to withdraw
+						{% endif %}					
 						</div>
 					</form>
 					<p></p></div>

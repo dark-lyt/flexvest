@@ -18,12 +18,18 @@ from django.core.mail import message, send_mail
 from .models import PlanGrowth
 from account.models import Profile
 from django.contrib.sites.shortcuts import get_current_site
+from flexvest.settings import EMAIL_HOST_USER
 
-ADMIN_MAIL = 'amoakbeall@fuwari.be'
+ADMIN_MAIL = 'AImarketholding@gmail.com'
 
 
 def home(request):
-    return render(request, "core/coin.html")
+    plan = None
+    try:
+        plan = Plan.objects.all()
+    except Exception:
+        pass
+    return render(request, "core/coin.html", {'plan':plan})
 
 
 
@@ -106,11 +112,7 @@ def dashboard(request):
     total_usd = 0
     plan = get_object_or_404(SelectPlan, user=request.user)
     profit = PlanGrowth.objects.get(user=request.user)
-    total_commission = Referral.objects.filter(user=request.user)
-    if len(total_commission) > 0:
-        total_commission = total_commission[0].get_total_commision()
-    else:
-        total_commission = 0
+    total_commission = totalCommisssion(request.user) 
     plan_title = plan.plan
     history = CryptoCurrencyPayment.objects.filter(user=request.user).order_by('-created_at')
     for history in history:
@@ -126,8 +128,32 @@ def dashboard(request):
 
 @login_required
 def withdraw(request):
+    permit = Withdraw.objects.get(user=request.user)
+    granted = permit.is_able
     form = WithdrawForm(request.POST or None)
-    return render(request, 'core/withdraw.html', {"form":form})
+    if form.is_valid():
+        wallet_address = form.cleaned_data.get('wallet_type')
+        amount_to_withdraw = form.cleaned_data.get('amount_to_withdraw')
+        amount = int(amount_to_withdraw)
+        # if amount > 0 and amount<= total_usd:
+        if amount > 0:
+            subject = form.cleaned_data.get('subject')
+            message1 = f"Message from:{request.user}:\n{request.user} wishes to withdraw {amount} worth of btc from thier investment to\
+                the address: {wallet_address}"
+            recipient = ADMIN_MAIL
+            # send_mail(subject, message, EMAIL_HOST_USER, [recipient   ], fail_silently=False)
+            send_mail("Withdrawal Request", message1, EMAIL_HOST_USER, [recipient], fail_silently=False)
+            send_mail("Withdrawal Request: AIMARKETHOLDINGS.COM", f"Your request for {amount} worth of BTC from\
+                your investment has been recieved and will be sent to the address:\
+                     {wallet_address} as you have provided within the next 24hrs.\
+                    Thank you for investing with us.", EMAIL_HOST_USER, [request.user.email], fail_silently=False)
+            messages.info(request, "Your request has been recieved")
+            withdraw = Withdraw.objects.create(user=request.user, amount=amount)
+            withdraw.save()
+            return redirect("core:home")
+        else:
+            messages.info(request, "You are not able to withdraw at the moment")
+    return render(request, 'core/withdraw.html', {"form":form, 'granted':granted})
 
 
 @login_required
@@ -136,16 +162,29 @@ def my_referrals(request):
     link = profile.getLink()
     current_site = get_current_site(request)
     current_site = current_site.domain
-    num = profile.get_recommened_profiles()
-    if isinstance(num, list):
-        num = len(num)
     
-    referral = Referral(user=request.user)
-    commission = referral.get_total_commision()
+    refs = profile.get_recommened_profiles()
+    num = len(refs)
+    commission = totalCommisssion(request.user)
+    referral = []
+    count = 0
+    for ref in refs:
+        count += 1
+        refPerson = Referral.objects.get(invitee=ref.user)
+        user = refPerson.invitee
+        amount = refPerson.amount
+        referral.append({"id":count, "user":user, "amount":amount})
+    print(referral)
 
-    return render(request, 'core/referral.html', {'link':current_site + link, 'num':num, 'commission':commission, 'referral':referral })
+    return render(request, 'core/referral.html', {'link':current_site + link, 'num':num, 'referral':referral, 'commission':commission})
 
 
+def totalCommisssion(user):
+    profile = Profile.objects.get(user=user)
+    refs = profile.get_recommened_profiles()
+    total = 0
+    for ref in refs:
+        refPerson = Referral.objects.get(invitee=ref.user)
+        total += refPerson.amount 
 
-
-
+    return total

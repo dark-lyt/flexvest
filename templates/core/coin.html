@@ -16,11 +16,11 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href=" {% static 'coin_files/bootstrap.min.css' %} ">
-	<link rel="stylesheet" href=" {% static 'coin_files/font-awesome.min.css' %} ">
-	<link rel="stylesheet" href=" {% static 'coin_files/themify-icons.css' %} ">
-	<link rel="stylesheet" href=" {% static 'coin_files/animate.css' %}">
-	<link rel="stylesheet" href=" {% static 'coin_files/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'coin_files/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'coin_files/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'coin_files/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'coin_files/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'coin_files/owl.carousel.css' %}">
 	<link rel="stylesheet" href="{% static 'coin_files/style.css' %}">
 
 
@@ -39,34 +39,83 @@
 	<!-- Header section -->
 	<header class="header-section clearfix">
 		<div class="container-fluid">
-			<a href="coin.html" class="site-logo">
+			<a href="{% url 'core:home' %}" class="site-logo">
 				<img src="{% static 'coin_files/logo.png' %}" class="myLogo" alt="">
 			</a>
-			<div class="responsive-bar"><i class="fas fa-bars"></i></div>
-			<a href="login.html" class="user"><i class="fas fa-user"></i></a>
-			
-			<nav class="main-menu">
 			{% if request.user.is_authenticated %}
-			
+			<div class="responsive-bar"><i class="fas fa-bars"></i></div>
+			<a href="{% url 'account:logout' %}" class="user"><i class="fas fa-power-off"></i></a>
+			<a href="{% url 'core:dashboard' %}" class="site-btn  btn-red">Dashboard</a>
+			<nav class="main-menu">
 				<ul class="menu-list">
+					<li>
+						<div class="tran">
+							<ul class="menu">
+								<li>
+									<div id="google_translate_element"></div>
+									<script type="text/javascript">
+										function googleTranslateElementInit() {
+											new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+										}
+									</script>
+									<script type="text/javascript" src="{% static 'js/element.js' %}"></script>
+									<!--<a href="#">ENG</a>
+						                                    <ul>
+						                                        <li>
+						                                            <a href="#">French</a>
+						                                        </li>
+						                                        <li>
+						                                            <a href="#">Deutsch</a>
+						                                        </li>
+						                                    </ul>-->
+								</li>
+							</ul>
+						</div>
+					</li>
 					<li><a href="{% url 'core:about' %}">About</a></li>
 					<li><a href="{% url 'core:faq' %}">FaQ</a></li>
 					<li><a href="{% url 'account:logout' %}">Logout</a></li>
-					<a href="{% url 'core:dashboard' %}" class="site-btn">Dashboard</a>
 				</ul>
-				{% else %}
+			</nav>
+			{% else %}
+			<div class="responsive-bar"><i class="fas fa-bars"></i></div>
+			<a href="{% url 'account:login' %}" class="user"><i class="fas fa-user"></i></a>
+			<a href="{% url 'account:signup' %}" class="site-btn  btn-red">Sign up</a>
+			<nav class="main-menu">
 				<ul class="menu-list">
+					<li>
+						<div class="tran">
+							<ul class="menu">
+								<li>
+									<div id="google_translate_element"></div>
+									<script type="text/javascript">
+										function googleTranslateElementInit() {
+											new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+										}
+									</script>
+									<script type="text/javascript" src="{% static 'js/element.js' %}"></script>
+									<!--<a href="#">ENG</a>
+						                                    <ul>
+						                                        <li>
+						                                            <a href="#">French</a>
+						                                        </li>
+						                                        <li>
+						                                            <a href="#">Deutsch</a>
+						                                        </li>
+						                                    </ul>-->
+								</li>
+							</ul>
+						</div>
+					</li>
 					<li><a href="{% url 'core:about' %}">About</a></li>
 					<li><a href="{% url 'core:faq' %}">FaQ</a></li>
 					<li><a href="{% url 'account:login' %}">Login</a></li>
-					<a href="{% url 'account:signup' %}" class="site-btn">Sign Up</a>
 				</ul>
-				{% endif %}
-				
 			</nav>
+			{% endif %}
 		</div>
 	</header>
-	<!-- Header section end --><style>
+	<style>
     /** 2.12 Card **/
 .card {
   box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
@@ -185,23 +234,74 @@
 }
 </style>
 <!-- Hero section -->
-	<section class="hero-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 hero-text">
-					<h2>Invest in <span>Crypto</span> <br>Invest with AI Marketholdings</h2>
-					<h4>We use modern progressive technologies of Bitcoin to earn money</h4>
-					<div class="hero-subscribe-from">
-						<!-- <input type="text" placeholder="Enter your email" name="email"> -->
-						<a href="{% url 'core:fund_account' %}"> <button class="site-btn sb-gradients" >Get Started</button></a>
-					</div>
+
+
+<div id="slider">
+	<figure>
+		<div class="img container_img">
+			<!-- <img src="./images/crp4.jfif"  alt="" class="heroBG"> -->
+				<div class="welcome-text slide-up">
+					<h1>PREMIUM CLOUD INVESTMENT PLATFORM</h1>
+
+					<P>
+						The best investment platform in the field of crypto currency 
+                                    multiplying your investments in no time. Unlike other companies, We offers safe and lucrative 
+                                    investments with little or no risk at all
+					</P>
 				</div>
-				<div class="col-md-6">
-					<img src="{% static 'coin_files/laptop.png' %}" class="laptop-image" alt="">
-				</div>
-			</div>
 		</div>
-	</section>
+		<div class="img container_img">
+		<!-- <img src="./images/crp3.jfif" alt="" class="heroBG"> -->
+		<div class="welcome-text   welc">
+			<h1>WE FOCUS ON MAXIMIZING PROFITS</h1>
+
+			<P>
+				Our goal is to maximize investor return and minimize
+				 any potential loss by applying principles in a disciplined and pragmatic process
+			</P>
+		</div>
+		</div>
+		<div class="img container_img">
+		<!-- <img src="./images/crp2.jfif" alt="" class="heroBG"> -->
+		<div class="welcome-text  wel">
+			<h1>99.9% AUTOMATED  WITGHDRAWL</h1>
+
+			<P>
+			 At AI Market Holdings
+			 <br>
+			 All withdrawals are processed automatically with zero human requirement
+			</P>
+		</div>
+		</div>
+		<div class="img container_img">
+		<!-- <img src="./images/crp5.jfif" alt="" class="heroBG"> -->
+		<div class="welcome-text">
+			<h1>MAXIMIZE PROFIT</h1>
+
+			<P>
+			
+			Highest paying investment pool in the market
+			</P>
+		</div>
+		</div>
+		<div class="img container_img">
+			<!-- <img src="./images/crp4.jfif"  alt="" class="heroBG"> -->
+				<div class="welcome-text slide-up">
+					<h1>PREMIUM CLOUD INVESTMENT PLATFORM</h1>
+
+					<P>
+						The best investment platform in the field of crypto currency 
+                                    multiplying your investments in no time. Unlike other companies, We offers safe and lucrative 
+                                    investments with little or no risk at all
+					</P>
+				</div>
+		</div>
+
+	</figure>
+</div>
+	<br>
+	
+	
 	<!-- Hero section end -->
 
 
@@ -211,8 +311,9 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-6 about-text">
 					<h2>WHAT IS AI MARKET</h2>
-					<h5>Bitcoin is an innovative payment network and a new kind of money.</h5>
-					<p>AI MARKET is a full-featured spot trading platform for the major cryptocurrencies such as Bitcoin, Ethereum, Ethereum
+					<h5>Bitcoin is an innovative payment network and a new kind of money.
+					</h5>
+					<p class="head-p" >AI MARKET is a full-featured spot trading platform for the major cryptocurrencies such as Bitcoin, Ethereum, Ethereum
 					Classic, Zcash, Monero, Litecoin, Dash, IOTA, and Ripple. The platform offers leveraged margin trading through our
 					peer-to-peer funding market.</p>
 					<a href="{% url 'core:fund_account' %}" class="site-btn sb-gradients sbg-line mt-5">Get Started</a>
@@ -227,7 +328,7 @@
 
         <div class="row clearfix row-deck">
           <div class="col-xl-12 col-lg-4 col-md-6" style="padding: 2%">
-              {% comment %} <iframe src="{% static 'coin_files/widget.html' %}" scrolling="auto" marginwidth="0" marginheight="0" border="0" style="border:0;margin:0;padding:0;" width="100%" height="36" frameborder="0"></iframe> {% endcomment %}
+              <iframe src="{% static 'coin_files/widget.html' %}" scrolling="auto" marginwidth="0" marginheight="0" border="0" style="border:0;margin:0;padding:0;" width="100%" height="36" frameborder="0"></iframe>
           </div>
       </div>
 	<!-- Features section -->
@@ -266,7 +367,7 @@
 					<i class="ti-headphone-alt"></i>
 					<div class="feature-content">
 						<h4>Recurring Buy</h4>
-						<p>Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly. </p>
+						<p>Invest in cryptocurrency slowly over time by scheduling buys Weekly, weekly, or monthly. </p>
 					</div>
 				</div> -->
 				<!-- feature -->
@@ -282,7 +383,7 @@
 <i class="fas fa-money-bill"></i>
 					<div class="feature-content">
 						<h4>Auto Withdrawals</h4>
-						<p>Newly-mined cryptocurrency is available in your account balance every 24 hours. You can withdraw your cryptocurrency at any moment. </p>
+						<p>Newly-mined cryptocurrency is available in your account balance every week. You can withdraw your cryptocurrency at any moment. </p>
 					</div>
 				</div>
 			</div>
@@ -332,7 +433,7 @@
 	<!-- Fact section -->
 	<section class="fact-section gradient-bg">
 		<div class="container">
-<iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/forex-cross-rates/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A500%2C%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22utm_source%22%3A%22fxdigitrades.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%7D" style="box-sizing: border-box; height: calc(468px); width: 100%;"></iframe>
+<iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/forex-cross-rates/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A500%2C%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22utm_source%22%3A%22aimarketholdings.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22forex-cross-rates%22%7D" style="box-sizing: border-box; height: calc(468px); width: 100%;"></iframe>
 		</div>
 	</section>
 	<!-- Fact section end -->
@@ -341,29 +442,38 @@
         <div class="row">
             <div class="col-12 col-md-12 ">
                 <div class="pricing">
-                    <div class="row align-items-center" >
+                    <div class="row align-items-center">
+					{% if plan %}
+					
+					{% else %}
+					{% endif %}
+					{% for p in plan %}
+					
+					
 					<div class="col-md-3 px-0">
 						<div class="card">
 							<div class="card-header text-center">
-								<h4 class="card-title">DIGI-STARTER</h4>
-								<p class="text-center">A Starter pack</p>
+								<h4 class="card-title">{{ p.title }}</h4>
+								<!-- <p class="text-center">A Starter pack</p> -->
 							</div>
-							<h1 class="price" style="font-size: 20px">$100 - $4999</h1>
+							<h1 class="price" style="font-size: 20px">${{ p.min_price }} - ${{ p.max_price }}</h1>
 							<ul>
-								<li><i data-feather="check-circle"></i>Minimum Deposit <br> <span style="font-weight: bold">$100</span></li>
-								<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">$4999</span>
+								<li><i data-feather="check-circle"></i>Minimum Deposit <br> <span style="font-weight: bold">${{ p.min_price }}</span></li>
+								<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">${{ p.max_price }}</span>
 								</li>
-								<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">1.2% Daily
+								<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">{{ p.rate }}% Weekly
 									</span></li>
 								<!-- <li><i data-feather="check-circle"></i>Compound Interest <span style="font-weight: bold">Yes</span></li> -->
 								<li><i data-feather="check-circle"></i>Referral Bonus <br> <span style="font-weight: bold">Yes</span></li>
 								<li><i data-feather="check-circle"></i><span style="font-weight: bold"></span> Weekly Withdrawal</li>
 							</ul>
 							<div class="card-footer">
-								<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get Started</a>
+								<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get
+									Started</a>
 							</div>
 						</div>
 					</div>
+					{% endfor %}
                         <!-- <div class="col-md-3 px-0">
                             <div class="card card-highlighted">
                                 <div class="card-header text-center">
@@ -385,47 +495,50 @@
                             </div>
                         </div> -->
 				
-				<div class="col-md-3 px-0">
+				{% comment %} <div class="col-md-3 px-0">
 					<div class="card">
 						<div class="card-header text-center">
-							<h4 class="card-title">DIGI-PRO</h4>
-							<p class="text-center">A Starter pack</p>
+							<h4 class="card-title">GOLD</h4>
+							<!-- <p class="text-center">A Starter pack</p> -->
 						</div>
 						<h1 class="price" style="font-size: 20px">$5000 - $19999</h1>
 						<ul>
 							<li><i data-feather="check-circle"></i>Minimum Deposit <br> <span style="font-weight: bold">$5000</span></li>
 							<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">$19999</span>
 							</li>
-							<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">1.8% Daily
+							<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">9% Weekly
 								</span></li>
+							<!-- <li><i data-feather="check-circle"></i>Compound Interest <span style="font-weight: bold">Yes</span></li> -->
 							<li><i data-feather="check-circle"></i>Referral Bonus <br> <span style="font-weight: bold">Yes</span></li>
 							<li><i data-feather="check-circle"></i><span style="font-weight: bold"></span> Weekly Withdrawal</li>
 						</ul>
 						<div class="card-footer">
-							<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get Started</a>
+							<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get
+								Started</a>
 						</div>
 					</div>
 				</div>
 						<div class="col-md-3 px-0">
 							<div class="card">
 								<div class="card-header text-center">
-									<h4 class="card-title">DIGI-PREMIUM</h4>
-									<p class="text-center">A Starter pack</p>
+									<h4 class="card-title">PLATINUM</h4>
+									<!-- <p class="text-center">A Starter pack</p> -->
 								</div>
 								<h1 class="price" style="font-size: 20px">$20000 - <strong>No limit </strong> </h1>
 								<ul>
 									<li><i data-feather="check-circle"></i>Minimum Deposit <br> <span style="font-weight: bold">$20000</span></li>
 									<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">No limit</span> </li>
-									<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">2.4% Daily
+									<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">12% Weekly
 										</span></li>
 									<!-- <li><i data-feather="check-circle"></i>Compound Interest <span style="font-weight: bold">Yes</span></li> -->
 									<li><i data-feather="check-circle"></i>Referral Bonus <br> <span style="font-weight: bold">Yes</span></li>
 									<li><i data-feather="check-circle"></i><span style="font-weight: bold"></span> Weekly Withdrawal</li>
 								</ul>
 								<div class="card-footer">
-									<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get Started</a>
+									<a href="{% url 'core:fund_account' %}" class="btn btn-primary btn-block">Get
+										Started</a>
 								</div>
-							</div>
+							</div> {% endcomment %}
 						</div>
                     </div>
                 </div>
@@ -454,46 +567,61 @@
 
 	<!-- Blog section -->
 	<section class="blog-section spad">
-		<div class="container">
-		<div class="testimonials-clean">
-			<div class="container">
-				<div class="intro">
-					<h2 class="text-center">Testimonials </h2>
-					<p class="text-center">Our customers love us! Read what they have to say below.</p>
+<!------------Design By Pradeep Singh Tomar----------->
+<div class="container">
+	<section id="testim" class="testim">
+			 <div class="testim-cover">
+				<div class="wrap">
+	
+					<span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+					<span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+					<ul id="testim-dots" class="dots">
+						<li class="dot active"></li><!--
+						--><li class="dot"></li><!--
+						--><li class="dot"></li><!--
+						--><li class="dot"></li><!--
+						--><li class="dot"></li>
+					</ul>
+					<div id="testim-content" class="cont">
+						
+						<div class="active">
+							<div class="img  imgs"><img src="{% static 'images/avatar2.png' %}" alt=""></div>
+							<h2>Rick Dempsey</h2>
+							<p class="para">This platform aimarketingholdings rocks! I must recommend this service to all my friends for bitcoin investments.</p>                    
+						</div>
+	
+						<div>
+							<div class="img imgs"><img src="{% static 'images/avatar4.png' %}" alt=""></div>
+							<h2>Ms.Dean Thompson</h2>
+							<p class="para">I'm impressed with the Customer Service and Speed of Payouts.</p>                    
+						</div>
+	
+						<div>
+							<div class="img imgs"><img src="{% static 'img/avatar6.png' %}" alt=""></div>
+							<h2>Gill Sans</h2>
+							<p class="para">Prompt and honest services, best Bitcoin investment site I've dealt with in recent times, keep up the good work.</p>                    
+						</div>
+	
+						<div>
+							<div class="img imgs"><img src="https://p16-sg-default.akamaized.net/aweme/1080x1080/tiktok-obj/1666413671597057.jpeg" alt=""></div>
+							<h2>Asams Smalling</h2>
+							<p class="para">The site is reliable and delivers.Having been using it for 6 months now and haven't got any problems </p>                    
+						</div>
+	
+						<div>
+							<div class="img  imgs"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKLJe1Lrz2N3ufVSwQokSJ79jGBbIptXuVnsdxMmNUlE14ohwp&usqp=CAU" alt=""></div>
+							<h2>Mr.Daniels Wood</h2>
+							<p class="para">This is a trustworthy investment company. Your Cryptos and mine are safe with them.</p>                    
+						</div>
+	
+					</div>
+	
 				</div>
-				<div class="row people">
-					<div class="col-md-6 col-lg-4 item">
-						<div class="box">
-							<p class="description">This platform AI Marketholdings rocks! I must recommend this service to all my friends for bitcoin investments.</p>
-						</div>
-						<div class="author"><img class="rounded-circle" src="{% static 'images/avatar2.png' %}">
-							<h5 class="name">Ben Johnson</h5>
-							<!-- <p class="title">CEO of Company Inc.</p> -->
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 item">
-						<div class="box">
-							<p class="description">I'm impressed with the Customer Service and Speed of Payouts.</p>
-						</div>
-						<div class="author"><img class="rounded-circle" src="{% static 'images/avatar3.png' %}">
-							<h5 class="name">Carl Kent</h5>
-							<!-- <p class="title">Founder of Style Co.</p> -->
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 item">
-						<div class="box">
-							<p class="description">Prompt and honest services, best Crypto investment site I've dealt with in recent times, keep up the good work..</p>
-						</div>
-						<div class="author"><img class="rounded-circle" src="{% static 'images/avatar6.png' %}">
-							<h5 class="name">Emily Clark</h5>
-							<!-- <p class="title">Owner of Creative Ltd.</p> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</script>
-		</div>
+			 </div>
+		</section>
+	</div>
+	<script src="https://use.fontawesome.com/1744f3f671.js"></script>
+	
 	</section>
 	<!-- Blog section end -->
 
@@ -507,6 +635,17 @@
 					<span>
 <!-- Copyright ©<script>document.write(new Date().getFullYear());</script>2021 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://aimarketholdings.net/" target="_blank">Zhavia Layout</a> -->
 </span>
+<span class="address-para">
+	<p>
+		5515 Cogswell St
+Halifax NS B3J 1R2
+Canada
+	</p>
+	<li><a href="mailto:support@aimarketholdings.com">support@aimarketholdings.com</a></li>
+						<li><a href="mailto:contact@aimarketholdings.com">contact@aimarketholdings.com</a></li>
+						<li><a href="">(786) 651-5787</a></li>
+</span>
+
 				</div>
 				
 				<!-- <div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
@@ -527,18 +666,152 @@
 					</div> -->
 					<div class="col-lg-8 text-center text-lg-right">
 						<ul class="footer-nav">
-							<li><a href="https://aimarketholdings.net/">DPA</a></li>
-							<li><a href="https://aimarketholdings.net/">Terms of Use</a></li>
-							<li><a href="https://aimarketholdings.net/">Privacy Policy </a></li>
-							<li><a href="https://aimarketholdings.net/">support@aimarketholdings.net</a></li>
-							<li><a href="https://aimarketholdings.net/">(786) 651-5787</a></li>
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy </a></li>
+							
 						</ul>
 					</div>
+				
 				</div>
 			</div>
+
 		</div>
+			<p class="text-lg-right">© Copyright 2017-AIMarketHoldings</p>
 	</footer>
 
+	<script>
+		// vars
+'use strict'
+var	testim = document.getElementById("testim"),
+		testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+    testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+    testimLeftArrow = document.getElementById("left-arrow"),
+    testimRightArrow = document.getElementById("right-arrow"),
+    testimSpeed = 4500,
+    currentSlide = 0,
+    currentActive = 0,
+    testimTimer,
+		touchStartPos,
+		touchEndPos,
+		touchPosDiff,
+		ignoreTouch = 30;
+;
+
+window.onload = function() {
+
+    // Testim Script
+    function playSlide(slide) {
+        for (var k = 0; k < testimDots.length; k++) {
+            testimContent[k].classList.remove("active");
+            testimContent[k].classList.remove("inactive");
+            testimDots[k].classList.remove("active");
+        }
+
+        if (slide < 0) {
+            slide = currentSlide = testimContent.length-1;
+        }
+
+        if (slide > testimContent.length - 1) {
+            slide = currentSlide = 0;
+        }
+
+        if (currentActive != currentSlide) {
+            testimContent[currentActive].classList.add("inactive");            
+        }
+        testimContent[slide].classList.add("active");
+        testimDots[slide].classList.add("active");
+
+        currentActive = currentSlide;
+    
+        clearTimeout(testimTimer);
+        testimTimer = setTimeout(function() {
+            playSlide(currentSlide += 1);
+        }, testimSpeed)
+    }
+
+    testimLeftArrow.addEventListener("click", function() {
+        playSlide(currentSlide -= 1);
+    })
+
+    testimRightArrow.addEventListener("click", function() {
+        playSlide(currentSlide += 1);
+    })    
+
+    for (var l = 0; l < testimDots.length; l++) {
+        testimDots[l].addEventListener("click", function() {
+            playSlide(currentSlide = testimDots.indexOf(this));
+        })
+    }
+
+    playSlide(currentSlide);
+
+    // keyboard shortcuts
+    document.addEventListener("keyup", function(e) {
+        switch (e.keyCode) {
+            case 37:
+                testimLeftArrow.click();
+                break;
+                
+            case 39:
+                testimRightArrow.click();
+                break;
+
+            case 39:
+                testimRightArrow.click();
+                break;
+
+            default:
+                break;
+        }
+    })
+		
+		testim.addEventListener("touchstart", function(e) {
+				touchStartPos = e.changedTouches[0].clientX;
+		})
+	
+		testim.addEventListener("touchend", function(e) {
+				touchEndPos = e.changedTouches[0].clientX;
+			
+				touchPosDiff = touchStartPos - touchEndPos;
+			
+				console.log(touchPosDiff);
+				console.log(touchStartPos);	
+				console.log(touchEndPos);	
+
+			
+				if (touchPosDiff > 0 + ignoreTouch) {
+						testimLeftArrow.click();
+				} else if (touchPosDiff < 0 - ignoreTouch) {
+						testimRightArrow.click();
+				} else {
+					return;
+				}
+			
+		})
+}
+	</script>
+
+<script>
+	var slideIndex = 0;
+	showSlides();
+	
+	function showSlides() {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+	  }
+	  slideIndex++;
+	  if (slideIndex > slides.length) {slideIndex = 1}    
+	  for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	  setTimeout(showSlides, 6000); // Change image every 2 seconds
+	}
+	</script>
 
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{% static 'coin_files/jquery-3.2.1.min.js.download' %}"></script>

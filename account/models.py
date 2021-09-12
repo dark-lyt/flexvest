@@ -25,6 +25,7 @@ class Profile(models.Model):
     ref_code = models.CharField(max_length=15)
     recomended_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='ref_by')
     gender = models.CharField(choices=GENDER_CHOICES, max_length=1 )
+    signup_confirmation = models.BooleanField(default=False)
 
 
 
@@ -36,10 +37,10 @@ class Profile(models.Model):
         my_recs = []
         for profile in qs:
             try:
-                if profile.recommended_by == self.user:
+                if profile.recomended_by == self.user:
                     my_recs.append(profile)
-            except Exception:
-                    my_recs = 0
+            except Exception as e:
+                pass
         return my_recs
 
 

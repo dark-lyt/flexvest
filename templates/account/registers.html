@@ -61,70 +61,70 @@
 										<form id="form-validation" method="post">
 
 										{% csrf_token %}
-									{{ error.username }}
+									{{ form.username.errors }}
 						<div class="register_input">
 								
 							<input type="text" class="register-form-border" id="id_username" name="username" placeholder="User Name*" onkeyup="restrict(&#39;uname&#39;)" maxlength="20" required="">
 							<span for = "id_username" class="register-right-icon"><i class="fas fa-user-alt"></i></span>
 						</div>
 
-						{{ error.first_name }}
+						{{ form.first_name.errors }}
 						<div class="register_input">
 						
 							<input type="text" class="register-form-border" id="id_first_name" name="first_name" placeholder="First Name*" required="">
 							<span class="register-right-icon"><i class="fas fa-user-alt"></i></span>
 						</div>
 
-						{{ error.last_name }}
+						{{ form.last_name.errors }}
 						<div class="register_input">
 						
 							<input type="text" class="register-form-border" id="id_last_name" name="last_name" placeholder="Last Name*" required="">
 							<span class="register-right-icon"><i class="fas fa-user-alt"></i></span>
 						</div>
 						
-						{{ error.email }}
+						{{ forms.email.errors }}
 						<div class="register_input">
 						
 							<input type="text" class="register-form-border" id="id_email" name="email" placeholder="Enter Email*" onkeyup="restrict(&#39;email&#39;)" required="">
 							<span class="register-right-icon"><i class="fas fa-envelope"></i></span>
 						</div>
 
-						{{ error.phone_number }}
+						{{ form.phone_number.errors }}
 						<div class="register_input">
 						
 							<input type="text" class="register-form-border" id="id_phone_number" name="phone_number" onkeyup="restrict(&#39;phone&#39;)" placeholder="Phone Number*" required="">
 							<span class="register-right-icon"><i class="fas fa-phone"></i></span>
 						</div>
 
-						{{ error.country }}
+						{{ form.country.errors }}
 						<div class="register_input">
 						{{ form.country }}
 							<!-- <input type="text" class="register-form-border" id="id_country" name="country" placeholder="Country">
 							<span class="register-right-icon"><i class="fas fa-globe"></i></span> -->
 						</div>
 						
-						{{ error.zip_postal }}
+						{{ form.zip_postal.errors }}
 						<div class="register_input">
 						
 							<input type="text" class="register-form-border" id="id_zip_postal" name="zip_postal" placeholder="Zip/Postal Code">
 							<span class="register-right-icon"><i class="fas fa-globe"></i></span>
 						</div>
 						
-						{{ error.select_plan }}
+						{{ form.select_plan.errors }}
 						<div class="register_input">
 						
 						{{ form.select_plan}}
 							
 						</div>
 						
-						{{ error.password }}
+						{{ form.password.errors }}
 						<div class="register_input">
 						
 							<input type="password" class="register-form-border" id="id_password" name="password" placeholder="Password*" required="">
 							<span class="register-right-icon"><i class="fas fa-key"></i></span>
 						</div>
 
-						{{ error.password2 }}
+						{{ form.password2.errors }}
 						<div class="register_input">
 			
 							<input type="password" class="register-form-border" id="id_password2" name="password2" placeholder="Confirm Password*" required="">

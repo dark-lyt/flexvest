@@ -6,6 +6,7 @@ from django.db import models
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 from cryptocurrency_payment.models import CryptoCurrencyPayment
+from django.utils import timezone
 
 
 LABEL_CHOICES = (
@@ -45,8 +46,6 @@ class SelectPlan(models.Model):
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE)
     payed = models.BooleanField(default=False)
     pay_amt = models.FloatField(default=0.0)
-    payed_date = models.DateTimeField(blank=True, null=True)
-
     def __str__(self):
         return f'{self.user} on {self.plan.title} plan'
 
@@ -58,9 +57,11 @@ class Withdraw(models.Model):
     amount = models.IntegerField(default=0)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
+    is_able = models.BooleanField(default=False)
+    
 
     def __str__(self):
-        return f"{self.pk}"
+        return f"{self.user}"
 
 
 class PlanGrowth(models.Model):
@@ -75,21 +76,10 @@ class PlanGrowth(models.Model):
 
 
 class Referral(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
-    invitee = models.ForeignKey(Profile,
+    invitee = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
     amount = models.FloatField(default=0.0)
 
-    def get_total_commision(self):
-        qs = Referral.objects.all()
-        total_commission = 0 
-        for referral in qs:
-            if referral.user == self.user:
-                total_commission += referral.amount 
-        return total_commission
-
-
     def __str__(self):
-        return f'{self.user} gained {self.amount} from {self.invitee}'
+        return f'{self.invitee}'
 

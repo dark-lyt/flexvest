@@ -208,7 +208,7 @@
                 <table data-scroll-y="400px" data-scroll-collapse="true" data-responsive="true" class="table table-striped table-hover dt-responsive">
                   <thead>
                     <tr>
-                      {% comment %} <th>S/N</th> {% endcomment %}
+                      <th>S/N</th>
                       <th>Referral</th>
                       <th>Commission</th>
                     </tr>
@@ -224,8 +224,8 @@
 				  {% for ref in referral %}
 				  
                     <tr class="odd gradeX">
-                      {% comment %} <td>{{ .index }}</td> {% endcomment %}
-                      <td>{{ ref.invitee.first_name }}</td>
+                      <td>{{ ref.id }}</td>
+                      <td>{{ ref.user }}</td>
                       <td><span class="tag square-tag tag-danger">${{ ref.amount }} </span></td>
                     </tr>
 					{% endfor %}

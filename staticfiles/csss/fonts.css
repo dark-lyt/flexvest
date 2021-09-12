@@ -1,0 +1,55 @@
+/* font-family: Abel; */
+
+@font-face {
+    font-family: Abel;
+    src: url("../fonts/Abel/Abel-Regular.ttf");
+}
+
+
+/* font-family: Abel; */
+
+
+/*     font-family: Cosmic_Neue;
+ */
+
+@font-face {
+    font-family: Cosmic_Neue;
+    src: url("../fonts/Comic_Neue/ComicNeue-Regular.ttf");
+}
+
+
+/*     font-family: Cosmic_Neue;
+ */
+
+
+/* font-family: Lato; */
+
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+
+/* font-family: Lato; */
+
+
+/* font-family: Open_Sans; */
+
+@font-face {
+    font-family: Open_Sans;
+    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+
+/* font-family: Open_Sans; */
+
+
+/* font-family: Roboto; */
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+
+/* font-family: Roboto; */
