@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 from cryptocurrency_payment import urls as cryptocurrency_payment_urls
+from flexvest.settings import STATIC_ROOT, STATIC_URL
+
+from django.conf.urls.static import static
+
 
 # path('dashboard/', views.dashboard, name='dashboard'),
 urlpatterns = [
@@ -25,4 +29,4 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('account/', include("account.urls", namespace='account')),
     path('paydetails/', include(cryptocurrency_payment_urls)),
-]
+] + static(STATIC_URL, document_root=STATIC_ROOT)
