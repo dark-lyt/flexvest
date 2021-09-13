@@ -165,14 +165,14 @@ LOGOUT_REDIRECT_URL = 'core:home'
 LOGIN_URL = 'account:login'
 LOGOUT_URL = 'account:logout'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'aimarketholdings.com'
+EMAIL_HOST = 'server288.web-hosting.com'
 EMAIL_USE_TLS = True
-EMAIL_PORT = 465
-# EMAIL_PORT = 587
+# EMAIL_PORT = 465
+EMAIL_PORT = 587
 EMAIL_HOST_USER = "admin@aimarketholdings.com"
 EMAIL_HOST_PASSWORD = 'iWc?,Ec6.Oac'
+
 
 ADMINS = (
     ('admin', 'AImarketholding@gmail.com'),

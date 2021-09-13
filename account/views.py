@@ -19,6 +19,7 @@ from flexvest.settings import EMAIL_HOST_USER as admin_mail
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import send_mail
+from django.views import View
 
 
 def register(request, **kwargs):
@@ -67,7 +68,8 @@ def register(request, **kwargs):
                 # method will generate a hash value with user related data
                 'token': account_activation_token.make_token(new_user),
             })
-            send_mail(subject=subject, message=message, from_email=admin_mail, recipient_list=[new_user.email], fail_silently=False)
+            send_mail(subject=subject, message=message, from_email=admin_mail,
+                      recipient_list=[new_user.email], fail_silently=False)
             return redirect('account:activation_sent')
         # else:
         #     return render(request, 'account/registers.html', {'form': user_form, 'error': user_form.errors})
@@ -77,30 +79,51 @@ def register(request, **kwargs):
     return render(request, 'account/registers.html', {'form': user_form})
 
 
-def activate(request, uidb64, token):
-    try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-    # checking if the user exists, if the token is valid.
-    if user is not None and AccountActivationTokenGenerator.check_token(user, token):
-        # if valid set active true
-        user.is_active = True
-        # set signup_confirmation true
-        # user.profile.signup_confirmation = True
-        user.profile.signup_confirmation = True
-        user.save()
-        user.save()
+# def activate(request, uidb64, token):
+#     user = User.objects.get(pk=uid)
+#     try:
+#         uid = force_text(urlsafe_base64_decode(uidb64))
+#         user = User.objects.get(pk=uid)
+#     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+#         user = None
+#     # checking if the user exists, if the token is valid.
+#     if user is not None and AccountActivationTokenGenerator.check_token(user=user, token=token):
+#         # if valid set active true
+#         user.is_active = True
+#         # set signup_confirmation true
+#         # user.profile.signup_confirmation = True
+#         user.profile.signup_confirmation = True
+#         user.save()
+#         user.save()
 
-        login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-        return redirect('core:dashboard')
-    else:
-        return render(request, 'activation_invalid.html')
+#         login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+#         return redirect('core:dashboard')
+#     else:
+#         return render(request, 'activation_invalid.html')
+
+
+class ActivateAccountView(View):
+    def get(self, request, uidb64, token):
+        try:
+            uid = force_text(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+
+        if user is not None and account_activation_token.check_token(user, token):
+            user.profile.signup_confirmation = True
+            user.save()
+            # login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            login(request, user)
+            return redirect('core:dashboard')
+        else:
+            # invalid link
+            return render(request, 'activation_invalid.html')
 
 
 def activation_sent(request):
     return render(request, "account/activation-sent.html")
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -173,6 +196,3 @@ def my_profile(request):
     current_site = get_current_site(request)
     current_site = current_site.domain
     return render(request, "account/myProfile.html", {'profile': profile, 'link': current_site + link, 'plan': plan})
-
-
-
