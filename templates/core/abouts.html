@@ -12,14 +12,15 @@
     <meta name="keywords" content="cryptocurrency, aimarketingholdings, bitcoin, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link href="https://aimarketingholdings.net/img/favicon.ico" rel="shortcut icon">
+    <!-- <link href="static/images/logo.png" rel="shortcut icon"> -->
+    <link rel="shortcut icon" href="{% static 'images/WhatsApp Image 2021-09-12 at 10.38.15 PM.jpeg' %}" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="./coin_files/css" rel="stylesheet">
+    <link href="{% static 'coin_files/css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{% static "coin_files/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static 'coin_files/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'coin_files/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'coin_files/themify-icons.css' %}">
     <link rel="stylesheet" href="{% static 'coin_files/animate.css' %}">
@@ -43,11 +44,11 @@
     <!-- Header section -->
     <header class="header-section clearfix">
        <div class="container-fluid">
-			<a href="coin.html" class="site-logo">
+			<a href="{% url 'core:home' %}" class="site-logo">
 				<img src="{% static 'coin_files/logo.png' %}" class="myLogo" alt="">
 			</a>
 			<div class="responsive-bar"><i class="fas fa-bars"></i></div>
-			<a href="login.html" class="user"><i class="fas fa-user"></i></a>
+			<a href="{% url 'account:login' %}" class="user"><i class="fas fa-user"></i></a>
 			
 			<nav class="main-menu">
 			{% if request.user.is_authenticated %}
@@ -60,10 +61,33 @@
 				</ul>
 				{% else %}
 				<ul class="menu-list">
+                    
 					<li><a href="{% url 'core:about' %}">About</a></li>
 					<li><a href="{% url 'core:faq' %}">FaQ</a></li>
+                    
 					<li><a href="{% url 'account:login' %}">Login</a></li>
+
+                    
 					<a href="{% url 'account:signup' %}" class="site-btn">Sign Up</a>
+
+                        <li>
+                            <div id="google_translate_element"></div>
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                                }
+                            </script>
+                            <script type="text/javascript" src="{% static 'js/element.js' %}"></script>
+                            <!--<a href="#">ENG</a>
+                        						                                    <ul>
+                        						                                        <li>
+                        						                                            <a href="#">French</a>
+                        						                                        </li>
+                        						                                        <li>
+                        						                                            <a href="#">Deutsch</a>
+                        						                                        </li>
+                        						                                    </ul>-->
+                        </li>
 				</ul>
 				{% endif %}
 				
@@ -218,6 +242,21 @@
             color: #fff;
             font-size: 1.8rem;
         }
+
+        p{
+            color: black;
+        }
+
+        .menu-list li a{
+            color: black;
+        }
+
+
+        .container-fluid a{
+            color: black;
+        }
+
+
     </style>
     <!-- Hero section -->
     <!-- <section class="hero-section">
@@ -402,46 +441,59 @@
     <!-- Blog section end -->
 
     <!-- Footer section -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row spad">
-                <div class="col-md-6 col-lg-3 footer-widget">
-                    <img src="{% static 'coin_files/logo.png' %}" class="mb-4" alt="">
-                    <!-- <p>\</p> -->
-                    <span>
-                        <!-- Copyright ©<script>document.write(new Date().getFullYear());</script>2021 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://aimarketingholdings.net/" target="_blank">Zhavia Layout</a> -->
-                    </span>
-                </div>
-    
-                <!-- <div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
-    					<h5 class="widget-title">Follow Us</h5>
-    					<div class="social">
-    						<a href="https://aimarketingholdings.net/" class="facebook"><i class="fa fa-facebook"></i></a>
-    						<a href="https://aimarketingholdings.net/" class="google"><i class="fa fa-google-plus"></i></a>
-    						<a href="https://aimarketingholdings.net/" class="instagram"><i class="fa fa-instagram"></i></a>
-    						<a href="https://aimarketingholdings.net/" class="twitter"><i class="fa fa-twitter"></i></a>
-    					</div>
-    				</div> -->
-            </div>
-            <div class="footer-bottom">
-                <div class="row">
-                    <!-- <div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
-    						<a href="https://aimarketingholdings.net/"><img src="./coin_files/appstore.png" alt="" class="mr-2"></a>
-    						<a href="https://aimarketingholdings.net/"><img src="./coin_files/playstore.png" alt=""></a>
-    					</div> -->
-                    <div class="col-lg-8 text-center text-lg-right">
-                        <ul class="footer-nav">
-                            <li><a href="https://aimarketingholdings.net/">DPA</a></li>
-                            <li><a href="https://aimarketingholdings.net/">Terms of Use</a></li>
-                            <li><a href="https://aimarketingholdings.net/">Privacy Policy </a></li>
-                            <li><a href="https://aimarketingholdings.net/">support@aimarketingholdings.net</a></li>
-                            <li><a href="https://aimarketingholdings.net/">(786) 651-5787</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="{% static 'coin_files/logo.png' %}" class="mb-4" alt="">
+					<!-- <p>\</p> -->
+					<span>
+<!-- Copyright ©<script>document.write(new Date().getFullYear());</script>2021 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://aimarketholdings.net/" target="_blank">Zhavia Layout</a> -->
+</span>
+<span class="address-para">
+	<p>
+		5515 Cogswell St
+Halifax NS B3J 1R2
+Canada
+	</p>
+	<li><a href="mailto:support@aimarketholdings.com">support@aimarketholdings.com</a></li>
+						<li><a href="mailto:contact@aimarketholdings.com">contact@aimarketholdings.com</a></li>
+						<li><a href="">+1 (409) 241-7525</a></li>
+</span>
+
+				</div>
+				
+				<!-- <div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+					<h5 class="widget-title">Follow Us</h5>
+					<div class="social">
+						<a href="https://aimarketholdings.net/" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://aimarketholdings.net/" class="google"><i class="fa fa-google-plus"></i></a>
+						<a href="https://aimarketholdings.net/" class="instagram"><i class="fa fa-instagram"></i></a>
+						<a href="https://aimarketholdings.net/" class="twitter"><i class="fa fa-twitter"></i></a>
+					</div>
+				</div> -->
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<!-- <div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
+						<a href="https://aimarketholdings.net/"><img src="./coin_files/appstore.png" alt="" class="mr-2"></a>
+						<a href="https://aimarketholdings.net/"><img src="./coin_files/playstore.png" alt=""></a>
+					</div> -->
+					<div class="col-lg-8 text-center text-lg-right">
+						<ul class="footer-nav">
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy </a></li>
+							
+						</ul>
+					</div>
+				
+				</div>
+			</div>
+
+		</div>
+			<p class="text-lg-right">© Copyright 2017-AIMarketHoldings</p>
+	</footer>
 
     <!--====== Javascripts & Jquery ======-->
     <script src="{% static 'coin_files/jquery-3.2.1.min.js.download' %}"></script>

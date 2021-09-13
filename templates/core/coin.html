@@ -8,6 +8,8 @@
 	<meta name="keywords" content="cryptocurrency, aimarketholdings, bitcoin, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
+		<link rel="shortcut icon" href="/static/images/WhatsApp Image 2021-09-12 at 10.38.15 PM.jpeg" type="image/x-icon">
+
 	<link href="https://aimarketholdings.net/img/favicon.ico" rel="shortcut icon">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -15,7 +17,7 @@
 	<link href="{% static 'coin_files/css' %}" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<!-- Stylesheets -->
+	<!-- Stylesheets --> 	
 	<link rel="stylesheet" href="{% static 'coin_files/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'coin_files/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'coin_files/themify-icons.css' %}">
@@ -456,11 +458,23 @@
 								<h4 class="card-title">{{ p.title }}</h4>
 								<!-- <p class="text-center">A Starter pack</p> -->
 							</div>
-							<h1 class="price" style="font-size: 20px">${{ p.min_price }} - ${{ p.max_price }}</h1>
+							<h1 class="price" style="font-size: 20px">${{ p.min_price }} -
+					
+								{% if p.title == 'Platinum' %}
+								{{ p.description1 }}
+								{% else %}
+								${{ p.max_price }}
+								{% endif %}
+							</h1>
 							<ul>
 								<li><i data-feather="check-circle"></i>Minimum Deposit <br> <span style="font-weight: bold">${{ p.min_price }}</span></li>
+								{% if p.title == 'Platinum' %}
+								<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">{{ p.description1 }}</span>
+								</li>
+								{% else %}
 								<li><i data-feather="check-circle"></i>Maximum Deposit <br> <span style="font-weight: bold">${{ p.max_price }}</span>
 								</li>
+								{% endif %}
 								<li><i data-feather="check-circle"></i>Return on Investment <br> <span style="font-weight: bold">{{ p.rate }}% Weekly
 									</span></li>
 								<!-- <li><i data-feather="check-circle"></i>Compound Interest <span style="font-weight: bold">Yes</span></li> -->
@@ -643,7 +657,7 @@ Canada
 	</p>
 	<li><a href="mailto:support@aimarketholdings.com">support@aimarketholdings.com</a></li>
 						<li><a href="mailto:contact@aimarketholdings.com">contact@aimarketholdings.com</a></li>
-						<li><a href="">(786) 651-5787</a></li>
+						<li><a href="">+1 (409) 241-7525</a></li>
 </span>
 
 				</div>

@@ -1904,6 +1904,8 @@ li {
 		-webkit-box-shadow: 0 14px 43px rgba(33, 54, 61, 0.15);
 		box-shadow: 0 14px 43px rgba(33, 54, 61, 0.15);
 	}
+
+	
 	.menu-list {
 		list-style: none;
 	}
@@ -2008,6 +2010,11 @@ li {
 	.single-blog-page .social-share {
 		text-align: left;
 		margin-top: 20px;
+	}
+
+
+	.myLogo{
+		width: 200px !important;
 	}
 }
 
