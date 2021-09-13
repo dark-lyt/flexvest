@@ -96,13 +96,13 @@ def test3():
 
 def start():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(test, 'interval', minutes=4)
-    scheduler.add_job(test2, 'interval', minutes=2)
-    scheduler.add_job(test3, 'interval', minutes=6)
-    scheduler.add_job(getCommission, 'interval', minutes=3)
-    scheduler.add_job(growPlan, 'interval', minutes=2)
-    scheduler.add_job(updateProfit, 'interval', minutes=9)
-    scheduler.add_job(is_able, 'interval', minutes=5)
+    scheduler.add_job(test, 'interval', minutes=40)
+    scheduler.add_job(test2, 'interval', minutes=20)
+    scheduler.add_job(test3, 'interval', minutes=60)
+    # scheduler.add_job(getCommission, 'interval', minutes=3)
+    # scheduler.add_job(growPlan, 'interval', minutes=2)
+    # scheduler.add_job(updateProfit, 'interval', minutes=9)
+    # scheduler.add_job(is_able, 'interval', minutes=5)
 
     scheduler.start()
 
